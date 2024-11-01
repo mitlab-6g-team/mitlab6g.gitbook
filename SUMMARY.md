@@ -24,14 +24,48 @@
   * [關於 xApp/rApp](./xApp_rApp/about_xApp_rApp.md)
   * [建置 xApp/rApp](./xApp_rApp/build_xApp_rApp.md)
 * [操作手冊](./user_manual/README.md)
-  * 新增資訊
-    * [新增Project](./user_manual/create_project.md#)
-    * [新增Application](./user_manual/create_application.md)
-    * [新增Project Dataset](./user_manual/create_project_dataset.md)
-    * [新增Model](./user_manual/create_model.md)
-    * [新增Preprocessing Pipeline](./user_manual/create_preprocessing_pipeline.md)
-    * [新增Optimization Dataset](./user_manual/create_application_dataset.md)
-    * [新增Training Pipeline](./user_manual/create_training_pipeline.md)
-    * [新增Optimization Pipeline](./user_manual/create_optimization_pipeline.md)
-    * [新增Evaluation Pipeline](./user_manual/create_evaluation_pipeline.md)
+  * Project
+    * [新增Project](./user_manual/project.md#)
+  * Application
+    * [新增Application](./user_manual/application.md)
+    * [更新Application](./user_manual/application.md#更新Application)
+    * [刪除Application](./user_manual/application.md#刪除Application)
+  * Project Dataset
+    * [新增Project Dataset](./user_manual/project_dataset.md)
+    * [更新Project Dataset](./user_manual/project_dataset.md#更新originaltraining-dataset)
+    * [下載Project Dataset](./user_manual/project_dataset.md#下載originaltraining-dataset)
+    * [搜尋Project Dataset](./user_manual/project_dataset.md#搜尋originaltraining-dataset)
+    * [刪除Project Dataset](./user_manual/project_dataset.md#刪除originaltraining-dataset)
+  * Model
+    * [新增Model](./user_manual/model.md)
+    * [更新Model](./user_manual/model.md#更新model)
+    * [下載Model](./user_manual/model.md#下載model)
+    * [發佈/取消發佈Model](./user_manual/model.md#發佈取消發佈model)
+    * [刪除Model](./user_manual/model.md#刪除model)
+  * Preprocessing Pipeline
+    * [新增Preprocessing Pipeline](./user_manual/preprocessing/pipeline.md)
+    * [更新Preprocessing Pipeline](./user_manual/preprocessing/pipeline.md#更新preprocessing-pipeline)
+    * [下載Preprocessing Pipeline](./user_manual/preprocessing/pipeline.md#下載preprocessing-pipeline)
+    * [刪除Preprocessing Pipeline](./user_manual/preprocessing/pipeline.md#刪除preprocessing-pipeline)
+  * Optimization Dataset
+    * [新增Optimization Dataset](./user_manual/application_dataset.md)
+    * [更新Optimization Dataset](./user_manual/application_dataset.md#更新originaloptimization-dataset)
+    * [下載Optimization Dataset](./user_manual/application_dataset.md#下載originaloptimization-dataset)
+    * [搜尋Optimization Dataset](./user_manual/application_dataset.md#搜尋originaloptimization-dataset)
+    * [刪除Optimization Dataset](./user_manual/application_dataset.md#刪除originaloptimization-dataset)
+  * Training Pipeline
+    * [新增Training Pipeline](./user_manual/training/pipeline.md)
+    * [更新Training Pipeline](./user_manual/training/pipeline.md#更新training-pipeline)
+    * [下載Training Pipeline](./user_manual/training/pipeline.md#下載training-pipeline)
+    * [刪除Training Pipeline](./user_manual/training/pipeline.md#刪除training-pipeline)
+  * Optimization Pipeline
+    * [新增Optimization Pipeline](./user_manual/optimization/pipeline.md)
+    * [更新Optimization Pipeline](./user_manual/optimization/pipeline.md#更新optimization-pipeline)
+    * [下載Optimization Pipeline](./user_manual/optimization/pipeline.md#下載optimization-pipeline)
+    * [刪除Optimization Pipeline](./user_manual/optimization/pipeline.md#刪除optimization-pipeline)
+  * Evaluation Pipeline
+    * [新增Evaluation Pipeline](./user_manual/evaluation/pipeline.md)
+    * [更新Evaluation Pipeline](./user_manual/evaluation/pipeline.md#更新evaluation-pipeline)
+    * [下載Evaluation Pipeline](./user_manual/evaluation/pipeline.md#下載evaluation-pipeline)
+    * [刪除Evaluation Pipeline](./user_manual/evaluation/pipeline.md#刪除evaluation-pipeline)
 * [常見問題](./issue/README.md)
