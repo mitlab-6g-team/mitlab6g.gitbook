@@ -25,11 +25,13 @@
   * [建置 xApp/rApp](./xApp_rApp/build_xApp_rApp.md)
 * [操作手冊](./user_manual/README.md)
   * Project
-    * [新增Project](./user_manual/project.md#)
+    * [新增Project](./user_manual/project.md)
+    * [更新Project](./user_manual/project.md#更新project)
+    * [刪除Project](./user_manual/project.md#刪除projct)
   * Application
     * [新增Application](./user_manual/application.md)
-    * [更新Application](./user_manual/application.md#更新Application)
-    * [刪除Application](./user_manual/application.md#刪除Application)
+    * [更新Application](./user_manual/application.md#更新application)
+    * [刪除Application](./user_manual/application.md#刪除application)
   * Project Dataset
     * [新增Project Dataset](./user_manual/project_dataset.md)
     * [更新Project Dataset](./user_manual/project_dataset.md#更新originaltraining-dataset)
