@@ -49,6 +49,20 @@
     * [更新Preprocessing Pipeline](./user_manual/preprocessing/pipeline.md#更新preprocessing-pipeline)
     * [下載Preprocessing Pipeline](./user_manual/preprocessing/pipeline.md#下載preprocessing-pipeline)
     * [刪除Preprocessing Pipeline](./user_manual/preprocessing/pipeline.md#刪除preprocessing-pipeline)
+    * Preprocesing Config
+      * [新增Preprocessing Config](./user_manual/preprocessing/config.md)
+      * [更新Preprocessing Config](./user_manual/preprocessing/config.md#更新preprocessing-config)
+      * [刪除Preprocessing Config](./user_manual/preprocessing/config.md#刪除preprocessing-config)
+    * Preprocessing Image
+      * [新增Preprocessing Image](./user_manual/preprocessing/image.md)
+      * [更新Preprocessing Image](./user_manual/preprocessing/image.md#更新preprocessing-image)
+      * [下載Preprocessing Image](./user_manual/preprocessing/image.md#下載preprocessing-image)
+      * [刪除Preprocessing Image](./user_manual/preprocessing/image.md#刪除preprocessing-image)
+    * Preprocessing Task
+      * [新增Preprocessing Task](./user_manual/preprocessing/task.md)
+      * [更新Preprocessing Task](./user_manual/preprocessing/task.md#更新preprocessing-task)
+      * [下載Preprocessing Task Log](./user_manual/preprocessing/task.md#下載preprocessing-task-log)
+      * [刪除Preprocessing Task](./user_manual/preprocessing/task.md#刪除preprocessing-task)
   * Optimization Dataset
     * [新增Optimization Dataset](./user_manual/application_dataset.md)
     * [更新Optimization Dataset](./user_manual/application_dataset.md#更新originaloptimization-dataset)

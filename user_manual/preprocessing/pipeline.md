@@ -35,7 +35,7 @@
     
     ![edit](../images/preprocessing/edit.png)
 
-2. 輸入更新的Pipeline資訊，或是按下Select File即可重新上傳檔案。完成後按下Update按鈕
+2. 輸入更新的Pipeline資訊，或是按下Select File即可重新上傳檔案，完成後按下Update按鈕
     
     ![edit1](../images/preprocessing/edit1.png)
 
