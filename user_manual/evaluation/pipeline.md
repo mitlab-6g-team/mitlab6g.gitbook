@@ -1,3 +1,16 @@
+# 查看所有Evaluation Pipeline
+
+## 用途
+
+查看你的 Application 內的所有 Evaluation Pipeline 資訊
+
+## 操作步驟
+
+1. 進入Application  Dashboard頁面後，點擊Evaluation Pipeline，即可顯示所有Evaluation Pipeline
+    
+    ![create](../images/evaluation/create.png)
+
+
 # 新增Evaluation Pipeline
 
 ## 用途
@@ -5,20 +18,16 @@
 為你的 Evaluation Pipeline 創建資訊
 
 ## 操作步驟
-
-1. 進入Application  Dashboard頁面後，點擊Evaluation Pipeline
     
-    ![create](../images/evaluation/create.png)
-    
-2. 點擊Upload Evaluation Pipeline按鈕
+1. 點擊Upload Evaluation Pipeline按鈕
     
     ![create1](../images/evaluation/create1.png)
     
-3. 輸入Evaluation Pipeline資訊後，點擊Select File按鈕，即可上傳你的Pipeline檔案，上傳完後按下Create按鈕
+2. 輸入Evaluation Pipeline資訊後，點擊Select File按鈕，即可上傳你的Pipeline檔案，上傳完後按下Create按鈕
     
     ![create2](../images/evaluation/create2.png)
     
-4. Evaluation Pipeline創建成功
+3. Evaluation Pipeline創建成功
     
     ![create3](../images/evaluation/create3.png)
 

@@ -1,3 +1,21 @@
+# 查看所有Model
+
+## 用途
+
+查看你的 Application 內的所有 Model 資訊
+
+## 操作步驟
+
+1. 在 Application 頁面點擊你的 Application
+    
+    ![create1](images/model/create1.png)
+
+2. 進入 Application  Dashboard 頁面後，點擊 Model，即可查看所有 Model
+
+    ![create2](images/model/create2.png)
+
+
+
 # 新增Model
 
 ## 用途
@@ -5,28 +23,16 @@
 為你已經訓練好的Model建立資訊
 
 ## 操作步驟
-
-1. 點擊Project上的Application按鈕進入Application頁面
     
-    ![create](images/model/create.png)
-    
-2. 點擊你的Application
-    
-    ![create1](images/model/create1.png)
-    
-3. 進入Application Dashboard頁面後，點擊Model
-    
-    ![create2](images/model/create2.png)
-    
-4. 點擊Upload Model按鈕
+1. 點擊Upload Model按鈕
     
     ![create3](images/model/create3.png)
     
-5. 輸入Model名稱、’描述及輸入/出格式後，點擊Select File按鈕，即可上傳你的Model壓縮檔(支援.zip)，上傳完後按下Create按鈕
+2. 輸入Model名稱、’描述及輸入/出格式後，點擊Select File按鈕，即可上傳你的Model壓縮檔(支援.zip)，上傳完後按下Create按鈕
     
     ![create4](images/model/create4.png)
     
-6. Model創建成功
+3. Model創建成功
     
     ![create5](images/model/create5.png)
 

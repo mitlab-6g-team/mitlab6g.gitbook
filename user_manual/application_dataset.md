@@ -1,3 +1,16 @@
+# 查看所有Optimization Dataset
+
+## 用途
+
+查看你的 Application 內的所有 Dataset 資訊
+
+## 操作步驟
+
+1. 進入Application  Dashboard頁面後，點擊Optimization Datasets，即可顯示所有Dataset
+    
+    ![create](images/application_dataset/create.png)
+
+
 # 新增Optimization Dataset
 
 ## 用途

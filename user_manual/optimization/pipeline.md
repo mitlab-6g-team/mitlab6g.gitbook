@@ -1,3 +1,16 @@
+# 查看所有Optimization Pipeline
+
+## 用途
+
+查看你的 Application 內的所有 Optimization Pipeline 資訊
+
+## 操作步驟
+
+1. 進入Application  Dashboard頁面後，點擊Optimization Pipeline，即可顯示所有Optimization Pipeline
+    
+    ![create](../images/optimization/create.png)
+
+
 # 新增Optimization Pipeline
 
 ## 用途
@@ -5,20 +18,16 @@
 為你的 Optimization Pipeline 創建資訊
 
 ## 操作步驟
-
-1. 進入Application  Dashboard頁面後，點擊Optimization Pipeline
     
-    ![create](../images/optimization/create.png)
-    
-2. 點擊Upload Optimization Pipeline按鈕
+1. 點擊Upload Optimization Pipeline按鈕
     
     ![create1](../images/optimization/create1.png)
     
-3. 輸入Optimization Pipeline資訊後，點擊Select File按鈕，即可上傳你的Pipeline檔案，上傳完後按下Create按鈕
+2. 輸入Optimization Pipeline資訊後，點擊Select File按鈕，即可上傳你的Pipeline檔案，上傳完後按下Create按鈕
     
     ![create2](../images/optimization/create2.png)
     
-4. Optimization Pipeline創建成功
+3. Optimization Pipeline創建成功
     
     ![create3](../images/optimization/create3.png)
 

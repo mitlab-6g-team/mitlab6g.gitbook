@@ -1,8 +1,8 @@
-# 新增Preprocessing Image
+# 查看所有Preprocessing Image
 
 ## 用途
 
-為你的 Preproceesing Image 創建資訊
+查看你的 Preprocessing Pipeline 內的所有 Image 資訊
 
 ## 操作步驟
 
@@ -10,19 +10,28 @@
     
     ![create](../images/preprocessing/config/create.png)
     
-2. 點擊右側的Build File按鈕跳轉到Build File頁面
+2. 點擊右側的Build File按鈕跳轉到Build File頁面，即可查看所有Image
     
     ![create1](../images/preprocessing/config/create1.png)
+
+
+# 新增Preprocessing Image
+
+## 用途
+
+為你的 Preproceesing Image 創建資訊
+
+## 操作步驟
     
-3. 按下Upload Build File按鈕
+1. 按下Upload Build File按鈕
     
     ![create2](../images/preprocessing/image/create.png)
     
-4. 輸入你的 Preprocessing Image 資訊後，點擊Select File按鈕，即可上傳你的Image檔案，上傳完成後按下 Create按鈕(請注意，總共有三個Image需要上傳)
+2. 輸入你的 Preprocessing Image 資訊後，點擊Select File按鈕，即可上傳你的Image檔案，上傳完成後按下 Create按鈕(請注意，總共有三個Image需要上傳)
     
     ![create3](../images/preprocessing/image/create1.png)
 
-5. Preprocessing Image 創建成功
+3. Preprocessing Image 創建成功
 
     ![creat4](../images/preprocessing/image/create2.png)
 

@@ -1,3 +1,18 @@
+# 查看所有Project Dataset
+
+## 用途
+
+查看你的 Project 內的所有 Dataset 資訊
+
+## 操作步驟
+
+### Original Dataset
+
+1. 點擊Project上的Dataset按鈕進入Dataset頁面，即可顯示所有Project Dataset
+    
+    ![create](images/project_dataset//create.png)
+
+
 # 新增Project Dataset
 
 ## 用途
@@ -7,20 +22,16 @@
 ## 操作步驟
 
 ### Original Dataset
-
-1. 點擊Project上的Dataset按鈕進入Dataset頁面
     
-    ![create](images/project_dataset//create.png)
-    
-2. 點擊右上角的Upload Original Dataset 按鈕
+1. 點擊右上角的Upload Original Dataset 按鈕
     
     ![create1](images/project_dataset//create1.png)
     
-3. 輸入Dataset名稱及描述後，點擊Select File按鈕，即可上傳你的Dataset壓縮檔(支援.zip)，上傳完後按下Create按鈕
+2. 輸入Dataset名稱及描述後，點擊Select File按鈕，即可上傳你的Dataset壓縮檔(支援.zip)，上傳完後按下Create按鈕
     
     ![create2](images/project_dataset//create2.png)
     
-4. Original Dataset新增成功
+3. Original Dataset新增成功
     
     ![create3](images/project_dataset//create3.png)
     

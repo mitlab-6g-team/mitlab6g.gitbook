@@ -1,3 +1,15 @@
+# 查看所有Application
+
+## 用途
+
+查看你的 Project 內的所有 Application 資訊
+
+## 操作步驟
+
+1. 點擊Project上的Application按鈕進入Application頁面，即可顯示所有Application
+    
+    ![create](images/application/create.png)
+
 # 新增Application
 
 ## 用途
@@ -6,19 +18,16 @@
 
 ## 操作步驟
 
-1. 點擊Project上的Application按鈕進入Application頁面
     
-    ![create](images/application/create.png)
-    
-2. 點擊右上角的Create Application 按鈕
+1. 點擊右上角的Create Application按鈕
     
     ![create1](images/application/create1.png)
     
-3. 輸入Application名稱及描述後按下Create按鈕
+2. 輸入Application名稱及描述後按下Create按鈕
     
     ![create2](images/application/create2.png)
     
-4. Application新增成功
+3. Application新增成功
     
     ![create3](images/application/create3.png)
 

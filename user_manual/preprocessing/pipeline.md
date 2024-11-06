@@ -1,3 +1,16 @@
+# 查看所有Preprocessing Pipeline
+
+## 用途
+
+查看你的 Application 內的所有 Preprocessing Pipeline 資訊
+
+## 操作步驟
+
+1. 進入Application  Dashboard頁面後，點擊Preprocessing Pipeline，即可顯示所有Preprocessing Pipeline
+    
+    ![create](../images/preprocessing/create.png)
+
+
 # 新增Preprocessing Pipeline
 
 ## 用途
@@ -5,22 +18,18 @@
 為你的 Preproceesing Pipeline 創建資訊
 
 ## 操作步驟
-
-1. 進入Application  Dashboard頁面後，點擊Preprocessing Pipeline
     
-    ![create](../images/preprocessing/create.png)
+1. 點擊Upload Preprocessing Pipeline按鈕
     
-2. 點擊Upload Preprocessing Pipeline按鈕
+    ![create1](../images/preprocessing/create1.png)
+    
+2. 輸入Preprocessing Pipeline資訊後，點擊Select File按鈕，即可上傳你的Pipeline檔案，上傳完後按下Create按鈕
     
     ![create2](../images/preprocessing/create2.png)
     
-3. 輸入Preprocessing Pipeline資訊後，點擊Select File按鈕，即可上傳你的Pipeline檔案，上傳完後按下Create按鈕
+3. Preprocessing Pipeline創建成功
     
     ![create3](../images/preprocessing/create3.png)
-    
-4. Preprocessing Pipeline創建成功
-    
-    ![create4](../images/preprocessing/create4.png)
 
 
 # 更新Preprocessing Pipeline
