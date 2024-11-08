@@ -146,4 +146,30 @@
       * [更新Evaluation Task](./user_manual/evaluation/task.md#更新evaluatiion-task)
       * [下載Evaluation Task Log](./user_manual/evaluation/task.md#下載evaluatiion-task-log)
       * [刪除Evaluation Task](./user_manual/evaluation/task.md#刪除optimization-task)
+&
+* API文件
+  * [API SERVER](./user_manual/api_doc/api_server.md)
+  * Dataset管理
+    * [上傳訓練用的Original/Training Dataset檔案](./user_manual/api_doc/dataset.md#上傳訓練用的originaltraining-dataset檔案)
+    * [上傳優化用的Original/Optimization Dataset檔案](./user_manual/api_doc/dataset.md#上傳優化用的originaloptimization-dataset檔案)
+    * [查詢Project底下訓練用的Original/Training Dataset資訊](./user_manual/api_doc/dataset.md#查詢project底下訓練用的orignaltraining-dataset資訊)
+    * [查詢Application底下優化用的Original/Optimization Dataset資訊](./user_manual/api_doc/dataset.md#查詢application底下優化用的originaloptimization-dataset資訊)
+  * Pipeline管理
+    * [上傳Preprocessing/Training/Optimization Pipeline檔案](./user_manual/api_doc/pipeline.md#上傳preprocessingtrainingoptimization-pipeline檔案)
+    * [查詢Application底下的Preprocessing/Training/Optimization Pipeline資訊](./user_manual/api_doc/pipeline.md#查詢application底下的preprocessingtrainingoptimization-pipeline資訊)
+  * Build File管理
+    * [上傳Preprocessing/Training/Optimization Build File檔案](./user_manual/api_doc/build_file.md#上傳preprocessingtrainingoptimization-build-file檔案)
+    * [查詢Pipeline底下的Preprocessing/Training/Optimization Build File資訊](./user_manual/api_doc/build_file.md#查詢pipeline底下的preprocessingtrainingoptimization-build-file資訊)
+  * Config管理
+    * [新增Preprocessing/Training/Optimization Config資訊](./user_manual/api_doc/config.md#新增preprocessingtrainingoptimization-config資訊)
+    * [查詢Pipeline底下的Preprocessing/Training/Optimization Config資訊](./user_manual/api_doc/config.md#查詢pipeline底下的preprocessingtrainingoptimization-config資訊)
+  * Pipeline運行
+    * [運行Preprocessing Task](./user_manual/api_doc/run_pipeline.md#運行preprocessing-task)
+    * [運行Training Task](./user_manual/api_doc/run_pipeline.md#運行training-task)
+    * [運行Optimization Task](./user_manual/api_doc/run_pipeline.md#運行optimization-task)
+    * [查看單一Preprocessing/Training/Optimization Task資訊](./user_manual/api_doc/run_pipeline.md#查看單一preprocessingtrainingoptimization-task資訊)
+    * [查看Preprocessing/Training/Optimization Task Log](./user_manual/api_doc/run_pipeline.md#查看preprocessingtrainingoptimization-task-log)
+  * Model管理
+    * [下載Model檔案](./user_manual/api_doc/model.md#下載model檔案)
+    * [查看所屬Application的Model資訊](./user_manual/api_doc/model.md#查看所屬application的model資訊)
 * [常見問題](./issue/README.md)
