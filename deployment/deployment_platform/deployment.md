@@ -1,18 +1,18 @@
 # Deployment Platform部屬
 此指南幫助使用者設置部屬平台。請從我們的GitHub儲存庫獲取安裝程式！
 
-### 預設環境
+## 預設環境
 部署流程會安裝一切所需套件
 
 - Python 3.8
 - Docker-ce 20.10.21
 
-### 安裝包下載
+## 安裝包下載
 ```bash
 git clone https://github.com/mitlab-6g-team/mitlab_deployment_platform.git
 ```
 
-### 填入環境變數
+## 填入環境變數
 - .env.common.sample
     - 當前系統最新版本對應請看下方表格
     - 規定
@@ -28,7 +28,7 @@ git clone https://github.com/mitlab-6g-team/mitlab_deployment_platform.git
 - .env.pgadmin_config
     - 可選更動
 
-### 系統版本
+## 系統版本
 | 系統名稱 | 系統版本 | 是否有固定port |
 | --- | --- | --- |
 | AGENT_OPERATION | v1.1.5 | 34806 |
@@ -42,13 +42,13 @@ git clone https://github.com/mitlab-6g-team/mitlab_deployment_platform.git
 | INFERENCE_TASK_MGT | v1.1.1 | 不需要 |
 | DATAFLOW_MGT | v1.1.0 | 30308 |
 
-### 開始安裝
+## 開始安裝
 ```bash
 cd mitlab_deployment_platform
 bash ./install_all.sh
 ```
 
-### 激活 mitlab_deployment_server
+## 激活 mitlab_deployment_server
 - 填入所需資訊
     - 從 mitlab_deployment_server 資料夾內**的** .env.common.sample 取得
         - DEPLOYMENT_PF_HOST_IP
