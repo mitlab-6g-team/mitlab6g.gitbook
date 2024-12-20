@@ -13,7 +13,11 @@
   * [Deployment Platform](./deployment/deployment_platform/deployment.md)
   * [Edge Server](./deployment/edge_server/deployment.md)
 * [使用手冊]
-  * [整體使用流程]
+  * [整體使用流程](./user_manual/task_flow.md#整體使用流程)
+    * [如何執行一個Preprocessing Task](./user_manual/task_flow.md#如何執行一個-preprocessing-task)
+    * [如何執行一個Training Task](./user_manual/task_flow.md#如何執行一個training-task)
+    * [如何執行一個Optimization Task](./user_manual/task_flow.md#如何執行一個optimization-task)
+    * [如何執行一個Evaluation Task](./user_manual/task_flow.md#如何執行一個evaluation-task)
   * [AI/ML Intelligent Platfrom]
     * [API操作說明]
       * [API SERVER](./user_manual/api_doc/api_server.md)
