@@ -4,7 +4,7 @@
   *  [Deployment Platform介紹]
   *  [Edge Server介紹]
   *  [抽象類別階層](./inference_system/abstract_class_hierarchy.md)
-  *  [開發人員]
+  *  [開發人員](./deploy_team.md)
 * [平台架構圖]
   * [整體架構圖](./architecture/architecture.md#平台整體架構圖)
   * [AI/ML Intelligent Plafrom](./architecture/architecture.md#aiml-intelligent-platform)
@@ -48,7 +48,6 @@
     * [Pipeline範例]
     * [Image範例]
     * [Template範例](./user_manual/inference.md)
-    * [SDK範例]
     * [前端頁面]
       * Project
         * [新增Project](./user_manual/project.md#新增project)
