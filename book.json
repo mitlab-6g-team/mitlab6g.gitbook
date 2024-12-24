@@ -4,8 +4,7 @@
         "chapter-fold",
         "splitter",
         "hide-element",
-        "copy-code-button",
-        "collapse-menu"
+        "copy-code-button"
     ],
     "pluginsConfig": {
         "hide-element": {
