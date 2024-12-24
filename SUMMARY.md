@@ -3,12 +3,13 @@
   *  [AI/ML Intelligent Platform介紹]
   *  [Deployment Platform介紹]
   *  [Edge Server介紹]
+  *  [抽象類別階層](./inference_system/abstract_class_hierarchy.md)
   *  [開發人員]
 * [平台架構圖]
-  * [整體架構圖]
-  * [AI/ML Intelligent Plafrom]
-  * [Deployment Platform]
-  * [Edge Server]
+  * [整體架構圖](./architecture/architecture.md#平台整體架構圖)
+  * [AI/ML Intelligent Plafrom](./architecture/architecture.md#aiml-intelligent-platform)
+  * [Deployment Platform](./architecture/architecture.md#部屬平台deployment-platform)
+  * [Edge Server](./architecture/architecture.md#邊緣伺服器edge-server)
 * [部屬]
   * [Deployment Platform](./deployment/deployment_platform/deployment.md)
   * [Edge Server](./deployment/edge_server/deployment.md)
@@ -46,7 +47,7 @@
         * [查看所屬Application的Model資訊](./user_manual/api_doc/model.md#查看所屬application的model資訊)
     * [Pipeline範例]
     * [Image範例]
-    * [Template範例]
+    * [Template範例](./user_manual/inference.md)
     * [SDK範例]
     * [前端頁面]
       * Project
@@ -173,27 +174,6 @@
           * [刪除Evaluation Task](./user_manual/evaluation/task.md#刪除optimization-task)
   * [Deployment Platform]
   * [Edge Server]
-* [平台介紹](README.md)
-* [推論系統](./inference_system/README.md)
-  * [系統架構](./inference_system/architecture.md)
-    * [部屬平台](./inference_system/architecture.md#部屬平台（deployment-platform）)
-    * [邊緣伺服器](./inference_system/architecture.md#邊緣伺服器（edge-server）)
-  * [系統需求](./inference_system/system_requirement.md)
-    * [部屬平台](./inference_system/system_requirement.md#部屬平台（deployment-platform）)
-    * [邊緣伺服器](./inference_system/system_requirement.md#邊緣伺服器（edge-server）)
-  * [部屬系統](./inference_system/deployment.md)
-    * [部屬平台](./inference_system/deployment.md#deployment-platform-部屬)
-    * [邊緣伺服器](./inference_system/deployment.md#edge-server-部署) 
-  * [抽象類別階層](./inference_system/abstract_class_hierarchy.md)
-* [Inference Host](./inference_host/README.md)
-  * [關於 Inference Host](./inference_host/about_inference_host.md)
-  * [建置 Inference Host](./inference_host/build_inference_host.md)
-    * [我可以在哪裡獲取範本？](./inference_host/build_inference_host.md#我可以在哪裡獲取範本？)
-    * [如何實作推論功能？](./inference_host/build_inference_host.md#如何實作推論功能？)
-    * [啟動 Django 伺服器時的自檢功能](./inference_host/build_inference_host.md#啟動-django-伺服器時的自檢功能)
-    * [我的推論 API 的路徑是什麼？](./inference_host/build_inference_host.md#我的推論-api-的路徑是什麼？)
-    * [不使用SDK的API文件](./inference_host/build_inference_host.md#不使用sdk的api文件)
-* [xApp/rApp](./xApp_rApp/README.md)
-  * [關於 xApp/rApp](./xApp_rApp/about_xApp_rApp.md)
-  * [建置 xApp/rApp](./xApp_rApp/build_xApp_rApp.md)
+    * [關於 xApp/rApp](./xApp_rApp/about_xApp_rApp.md)
+    * [建置 xApp/rApp](./xApp_rApp/build_xApp_rApp.md)
 * [常見問題](./issue/README.md)
