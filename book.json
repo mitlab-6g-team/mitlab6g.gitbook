@@ -4,11 +4,15 @@
         "chapter-fold",
         "splitter",
         "hide-element",
-        "copy-code-button"
+        "copy-code-button",
+        "collapse-menu"
     ],
     "pluginsConfig": {
         "hide-element": {
             "elements": [".gitbook-link"]
+        },
+        "theme-default": {
+            "collapseNav": false
         }
     }
 }
