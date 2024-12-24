@@ -1,26 +1,26 @@
 # Summary
-* [簡介]
+* 簡介
   *  [AI/ML Intelligent Platform介紹]
   *  [Deployment Platform介紹]
   *  [Edge Server介紹]
   *  [抽象類別階層](./inference_system/abstract_class_hierarchy.md)
   *  [開發人員](./deploy_team.md)
-* [平台架構圖]
+* 平台架構圖
   * [整體架構圖](./architecture/architecture.md#平台整體架構圖)
   * [AI/ML Intelligent Plafrom](./architecture/architecture.md#aiml-intelligent-platform)
   * [Deployment Platform](./architecture/architecture.md#部屬平台deployment-platform)
   * [Edge Server](./architecture/architecture.md#邊緣伺服器edge-server)
-* [部屬]
+* 部屬
   * [Deployment Platform](./deployment/deployment_platform/deployment.md)
   * [Edge Server](./deployment/edge_server/deployment.md)
-* [使用手冊]
+* 使用手冊
   * [整體使用流程](./user_manual/task_flow.md#整體使用流程)
     * [如何執行一個Preprocessing Task](./user_manual/task_flow.md#如何執行一個-preprocessing-task)
     * [如何執行一個Training Task](./user_manual/task_flow.md#如何執行一個training-task)
     * [如何執行一個Optimization Task](./user_manual/task_flow.md#如何執行一個optimization-task)
     * [如何執行一個Evaluation Task](./user_manual/task_flow.md#如何執行一個evaluation-task)
-  * [AI/ML Intelligent Platfrom]
-    * [API操作說明]
+  * AI/ML Intelligent Platfrom
+    * API操作說明
       * [API SERVER](./user_manual/api_doc/api_server.md)
       * Dataset管理
         * [上傳訓練用的Original/Training Dataset檔案](./user_manual/api_doc/dataset.md#上傳訓練用的originaltraining-dataset檔案)
