@@ -14,7 +14,7 @@
   * [Deployment Platform](./deployment/deployment_platform/deployment.md)
   * [Edge Server](./deployment/edge_server/deployment.md)
 * 使用手冊
-  * [整體使用流程](./user_manual/task_flow.md#整體使用流程)
+  * 整體使用流程
     * [如何執行一個Preprocessing Task](./user_manual/task_flow.md#如何執行一個-preprocessing-task)
     * [如何執行一個Training Task](./user_manual/task_flow.md#如何執行一個training-task)
     * [如何執行一個Optimization Task](./user_manual/task_flow.md#如何執行一個optimization-task)
@@ -22,7 +22,7 @@
   * AI/ML Intelligent Platfrom
     * API操作說明
       * [API SERVER](./user_manual/api_doc/api_server.md)
-      * Dataset管理
+      * [Dataset管理](./user_manual/api_doc/dataset.md)
         * [上傳訓練用的Original/Training Dataset檔案](./user_manual/api_doc/dataset.md#上傳訓練用的originaltraining-dataset檔案)
         * [上傳優化用的Original/Optimization Dataset檔案](./user_manual/api_doc/dataset.md#上傳優化用的originaloptimization-dataset檔案)
         * [查詢Project底下訓練用的Original/Training Dataset資訊](./user_manual/api_doc/dataset.md#查詢project底下訓練用的orignaltraining-dataset資訊)
