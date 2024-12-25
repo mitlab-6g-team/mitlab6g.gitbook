@@ -1,15 +1,15 @@
 # Summary
 * 簡介
-  *  [AI/ML Intelligent Platform介紹](./introduce/introduce.md)
-  *  [Deployment Platform介紹](./introduce/introduce.md)
-  *  [Edge Server介紹](./introduce/introduce.md)
-  *  [抽象類別階層](./inference_system/abstract_class_hierarchy.md)
-  *  [開發人員](./deploy_team.md)
+  *  AI/ML Intelligent Platform介紹 (未完成)
+  *  Deployment Platform介紹 (未完成)
+  *  Edge Server介紹 (未完成)
+  *  [抽象類別階層](./introduce/abstract_class_hierarchy.md)
+  *  開發人員 (未完成)
 * 平台架構圖
   * [整體架構圖](./architecture/architecture.md#平台整體架構圖)
   * [AI/ML Intelligent Plafrom](./architecture/architecture.md#aiml-intelligent-platform)
-  * [Deployment Platform](./architecture/architecture.md#部屬平台deployment-platform)
-  * [Edge Server](./architecture/architecture.md#邊緣伺服器edge-server)
+  * [Deployment Platform(點起來有問題)](./architecture/architecture.md#部屬平台deployment-platform)
+  * [Edge Server(點起來有問題)](./architecture/architecture.md#邊緣伺服器edge-server)
 * 部屬
   * [Deployment Platform](./deployment/deployment_platform/deployment.md)
   * [Edge Server](./deployment/edge_server/deployment.md)
@@ -45,10 +45,10 @@
       * [Model管理](./user_manual/api_doc/model.md)
         * [下載Model檔案](./user_manual/api_doc/model.md#下載model檔案)
         * [查看所屬Application的Model資訊](./user_manual/api_doc/model.md#查看所屬application的model資訊)
-    * [Pipeline範例]
-    * [Image範例]
+    * Pipeline範例(未完成)
+    * Image範例(未完成)
     * [Template範例](./user_manual/inference.md)
-    * [前端頁面]
+    * 前端頁面
       * [Project](./user_manual/project.md)
         * [新增Project](./user_manual/project.md#新增project)
         * [更新Project](./user_manual/project.md#更新project)

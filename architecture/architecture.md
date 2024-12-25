@@ -7,6 +7,8 @@
 
 ![all](images/all.jpg)
 
+---
+
 # AI/ML Intelligent Platform
 
 ![ai_ml](images/ai_ml.png)
@@ -20,6 +22,8 @@
 
 # 部屬平台（Deployment Platform）
 
+---
+
 ![Deployment Platform](images/deployment_platform.jpg)
 
 * **部屬管理**:
@@ -28,6 +32,8 @@
   * Edge Serve Control Plane負責與邊緣伺服器協調部屬，**監控系統**可即時追蹤部屬進度與模型運行情況，確保部屬穩定性。
 * **資料支持**:
   * Metadata DB 和 File DB 提供模型的資訊與檔案支持，確保部屬完整性與一致性。
+
+---
 
 # 邊緣伺服器（Edge Server）
 
