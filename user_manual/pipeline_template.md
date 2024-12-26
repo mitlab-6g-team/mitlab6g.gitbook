@@ -211,21 +211,3 @@ if __name__ == '__main__':
     2. 預處理數據集 (```task2```)
     3. 上傳處理後的數據集 (```task3```)
 * 每個任務均設定了計算資源請求與限制（CPU、記憶體）以及執行選項（例如禁用快取）。
-
----
-
-## 操作說明
-
-### 1. Pipeline 編譯
-* 將程式碼編譯為 YAML 格式的Pipeline配置文件。
-* 執行命令：
-  ```bash
-  python pipeline.py
-  ```
-  將生成 ```pipeline.yaml``` 文件。
-
-### 2.Pipeline 部署
-* 在 Kubeflow Pipelines UI 中上傳 ```pipeline.yaml``` 文件，並按照需求填入執行參數。
-
-### 3.Pipeline 執行
-* 選擇上傳的流水線並執行，檢查每個步驟的輸入與輸出是否正確。
