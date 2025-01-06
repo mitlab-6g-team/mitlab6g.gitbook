@@ -1,10 +1,10 @@
 # Summary
 * 簡介
-  *  AI/ML Intelligent Platform介紹 (未完成)
-  *  Deployment Platform介紹 (未完成)
-  *  Edge Server介紹 (未完成)
+  *  [AI/ML Intelligent Platform介紹](./introduce/introduce.md#aiml-intelligent-platform) 
+  *  [Deployment Platform介紹](./introduce/introduce.md#部屬平台deployment-platform)
+  *  [Edge Server介紹](./introduce/introduce.md#邊緣伺服器-edge-server)
   *  [抽象類別階層](./introduce/abstract_class_hierarchy.md)
-  *  開發人員 (未完成)
+  *  [開發人員](./introduce/deploy_team.md#開發人員)
 * 平台架構圖
   * [整體架構圖](./architecture/architecture.md#平台整體架構圖)
   * [AI/ML Intelligent Plafrom](./architecture/architecture.md#aiml-intelligent-platform)
@@ -48,7 +48,6 @@
     * [Pipeline範例](./user_manual/pipeline_template.md)
       * [Pipeline 流程概述](./user_manual/pipeline_template.md#pipeline-流程概述)
       * [程式碼結構說明](./user_manual/pipeline_template.md#程式碼結構說明)
-      * [操作說明](./user_manual/pipeline_template.md#操作說明)
     * [Image範例](./user_manual/image_template.md)
       * [基本Image](./user_manual/image_template.md#1-基本image)
       * [Processing Image](./user_manual/image_template.md#2processing-image)

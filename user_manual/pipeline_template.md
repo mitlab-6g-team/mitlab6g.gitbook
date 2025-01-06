@@ -35,15 +35,14 @@ def download_original_dataset(output: components.OutputPath(), original_dataset_
         port=port,
         access_key=access_key,
         secret_key=secret_key,
-        api_version='v1.1.4'
+        api_version='v1.1.5'
     )
-    file_manager = FileUtility(credential_manager=credential_server,api_version='v1.1.3')
+    file_manager = FileUtility(credential_manager=credential_server, host=host, api_version='v1.1.8')
 
     # download original dataset
     file_type = "dataset"
     downloaded_file = file_manager.download(
         file_type=file_type, file_path=original_dataset_uid)
-
 
     # save download original dataset to output path
     download_folder_path = output
@@ -124,9 +123,9 @@ def upload_training_dataset(input: components.InputPath(), training_dataset_uid:
         port=port,
         access_key=access_key,
         secret_key=secret_key,
-        api_version='v1.1.4'
+        api_version='v1.1.5'
     )
-    file_manager = FileUtility(credential_manager=credential_server,api_version='v1.1.3')
+    file_manager = FileUtility(credential_manager=credential_server, host=host, api_version='v1.1.8')
 
     # upload training dataset
     upload_file_path = f"""{input}/training_dataset.zip"""
