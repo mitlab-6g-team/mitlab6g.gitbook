@@ -1,0 +1,5 @@
+# 忽略 _book 目錄
+_book/
+
+# 忽略 node_modules 目錄
+node_modules/

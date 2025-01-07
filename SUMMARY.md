@@ -8,8 +8,8 @@
 * 平台架構圖
   * [整體架構圖](./architecture/architecture.md#平台整體架構圖)
   * [AI/ML Intelligent Plafrom](./architecture/architecture.md#aiml-intelligent-platform)
-  * [Deployment Platform(點起來有問題)](./architecture/architecture.md#部屬平台deployment-platform)
-  * [Edge Server(點起來有問題)](./architecture/architecture.md#邊緣伺服器edge-server)
+  * [Deployment Platform](./architecture/architecture.md#部屬平台deployment-platform)
+  * [Edge Server](./architecture/architecture.md#邊緣伺服器edge-server)
 * 部屬
   * [Deployment Platform](./deployment/deployment_platform/deployment.md)
   * [Edge Server](./deployment/edge_server/deployment.md)
