@@ -189,5 +189,5 @@
       * [Models 頁面](.//user_manual/deployment_platform/interface_intro.md#models-頁面)
     * [部屬Position流程](./user_manual/deployment_platform/deploy_position.md)
   * Edge Server
-    * [建置 xApp/rApp](./xApp_rApp/build_xApp_rApp.md)
+    * [關於 xApp/rApp](./xApp_rApp/about_xApp_rApp.md)
 * [常見問題](./issue/README.md)
