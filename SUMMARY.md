@@ -185,9 +185,8 @@
   * Deployment Platform
     * [前端頁面說明](./user_manual/deployment_platform/interface_intro.md)
       * [Applications 頁面](.//user_manual/deployment_platform/interface_intro.md#applications-頁面)
-      * [Inference node 頁面](.//user_manual/deployment_platform/interface_intro.md#inference-node-頁面)
-      * [Positions 頁面](.//user_manual/deployment_platform/interface_intro.md#positions-頁面)
-      * [監控Position頁面](.//user_manual/deployment_platform/interface_intro.md#監控position頁面)
+      * [Position 頁面](.//user_manual/deployment_platform/interface_intro.md#position-頁面)
+      * [Models 頁面](.//user_manual/deployment_platform/interface_intro.md#models-頁面)
     * [部屬Position流程](./user_manual/deployment_platform/deploy_position.md)
   * Edge Server
     * [建置 xApp/rApp](./xApp_rApp/build_xApp_rApp.md)
