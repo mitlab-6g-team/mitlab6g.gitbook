@@ -58,6 +58,11 @@
       * [啟動 Django 伺服器時的自檢功能](./user_manual/inference.md#啟動-django-伺服器時的自檢功能)
       * [我的推論 API 的路徑是什麼？](./user_manual/inference.md#我的推論-api-的路徑是什麼)
       * [不使用SDK的API文件](./user_manual/inference.md#不使用sdk的api文件)
+    * [SDK範例](./user_manual/sdk.md)
+      * [Compress](./user_manual/sdk.md#1compress)
+      * [Decompress](./user_manual/sdk.md#2-decompress)
+      * [File Access](./user_manual/sdk.md#3file-access-authentication-required)
+      * [Model Metric](./user_manual/sdk.md#4model-metric-authentication-required)
     * 前端頁面
       * [Project](./user_manual/project.md)
         * [新增Project](./user_manual/project.md#新增project)
