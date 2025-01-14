@@ -1,11 +1,11 @@
 # Pipeline範例
 Pipeline 是一種高度靈活且通用的框架，可以根據需求增減步驟。例如，當處理流程較為簡單時，可以減少步驟；而當需求更複雜時，可以添加更多任務。然而，實際應用中，數據處理的 Pipeline 通常會被設計為三個核心步驟，以便保持清晰的結構和良好的可維護性。
 
-此頁面展示了一個完整的 Pipeline 範例，用於說明如何利用 Kubeflow Pipelines 實現一個典型的數據處理工作流。該範例包含三個主要步驟：數據下載、數據預處理以及數據上傳。
+此頁面展示了一個完整的 Preprocessing Pipeline 範例，用於說明如何利用 Kubeflow Pipelines 實現一個典型的數據處理工作流。該範例包含三個主要步驟：數據下載、數據預處理以及數據上傳。
 
 ---
 
-## Pipeline 流程概述
+## Preprocessing Pipeline 流程概述
 ### 1. 下載原始數據集（Download Original Dataset）
 
 使用指定的憑證與檔案管理工具，從遠端伺服器下載數據集（如壓縮檔案），並將其存儲到指定的輸出目錄。
@@ -17,7 +17,12 @@ Pipeline 是一種高度靈活且通用的框架，可以根據需求增減步�
 
 將經過預處理的數據集壓縮檔案上傳到遠端伺服器，供其他應用程序使用。
 
+---
+
+## Preprocessing Pipeline 程式碼
+
 ```python
+# Kubeflow Pipeline套件宣告，不可變更
 import kfp
 from kfp import dsl
 import kfp.components as components
@@ -25,6 +30,7 @@ from kfp.components import func_to_container_op
 
 
 # Define component functions
+
 def download_original_dataset(output: components.OutputPath(), original_dataset_uid: str, host: str, port: str, access_key: str, secret_key: str):
     import os
     from mitlab_aiml_tools.auth.credential import CredentialServer
@@ -184,29 +190,107 @@ if __name__ == '__main__':
 
 ---
 
-## 程式碼結構說明
+## Preprocessing Pipeline 程式碼結構說明
+以下為完整的 **Preprocessing Pipeline** 程式碼結構解說，詳細說明了程式碼各區塊的功能、哪些部分可以修改、哪些部分不可變更，確保讀者能夠正確理解並靈活調整 Pipeline。
 
-### 1. Component 函數
-* 下載數據集 (```download_original_dataset```)：
-  * 初始化憑證伺服器並使用檔案管理工具下載數據集。
-  * 將下載的數據集保存為壓縮檔案。
-* 預處理數據集 (```preprocessing```)：
-  * 解壓縮下載的數據集並對其進行標準化處理。
-  * 按一定規則將數據切割為序列與標籤對，保存為壓縮檔案。
-* 上傳數據集 (```upload_training_dataset```)：
-  * 初始化憑證伺服器並使用檔案管理工具將壓縮後的數據集上傳到遠端伺服器。
+#### 1.引入 Kubeflow Pipelines 套件
+在程式碼的開頭，我們引入了必需的 **Kubeflow Pipelines (kfp)** 模組，這些模組負責 **Pipeline** 的定義與處理。
+```python
+import kfp
+from kfp import dsl
+import kfp.components as components
+from kfp.components import func_to_container_op
+```
+這部分的 **套件宣告** 是 **不可變更** 的，因為它是 Kubeflow Pipeline 的基本框架。如果缺少這些套件，Pipeline 將無法正常運作。
 
-### 2. Component 包裝
-將上述函數轉換為可供Pipeline使用的組件，並指定其運行所需的容器映像（```base_image```）。
+<br/>
 
-### 3. Pipeline 定義
-```@dsl.pipeline``` 用於定義整個流水線：
-* 輸入參數包括：
-  * ```preprocessing_task_uid```：用於標記 Pod 的唯一識別符。
-  * ```original_dataset_uid``` 和 ```training_dataset_uid```：數據集的唯一識別符。
-  * 遠端伺服器的 ```host```、```port``` 和憑證信息。
-* 定義了流水線的三個任務：
-    1. 下載原始數據集 (```task1```)
-    2. 預處理數據集 (```task2```)
-    3. 上傳處理後的數據集 (```task3```)
-* 每個任務均設定了計算資源請求與限制（CPU、記憶體）以及執行選項（例如禁用快取）。
+#### 2. 定義 Pipeline 組件（Component Functions）
+Pipeline 的核心是由三個步驟組成的組件（Components），每個步驟的功能以函數形式實現，並透過 `func_to_container_op` 轉換成容器操作（Container Op）。每個函數的結構如下：
+
+##### Step1 : 下載原始數據集（Download Original Dataset）
+此步驟的目標是從遠端伺服器下載指定的數據集，並將其存儲在指定的輸出路徑。
+
+函數名稱：`download_original_dataset`
+* 函數名稱可更改，但需與下方的 `func_to_container_op` 綁定名稱保持一致。
+* 函數參數不可變更，因為它們對應 Kubeflow Pipeline 的 I/O 資料流。
+```python
+def download_original_dataset(output: components.OutputPath(), original_dataset_uid: str, host: str, port: str, access_key: str, secret_key: str):
+```
+
+##### Step2 : 預處理數據集（Preprocessing）
+此步驟負責解壓縮數據集、標準化數據，並將其分割為序列與標籤對，然後存儲為壓縮檔案格式。
+函數名稱：`preprocessing`
+* 函數名稱可更改，但需與下方的 `func_to_container_op` 綁定名稱保持一致。
+* 函數參數不可變更，因為它們對應 Kubeflow Pipeline 的 I/O 資料流。
+```python
+def preprocessing(input: components.InputPath(), output: components.OutputPath()):
+```
+
+##### Step3 : 上傳處理後的數據集（Upload Training Dataset）
+此步驟將預處理後的數據集上傳至遠端伺服器，供其他應用程序使用。
+函數名稱：`upload_training_dataset`
+* 函數名稱可更改，但需與下方的 `func_to_container_op` 綁定名稱保持一致。
+* 函數參數不可變更，因為它們對應 Kubeflow Pipeline 的 I/O 資料流。
+```python
+def upload_training_dataset(input: components.InputPath(), training_dataset_uid: str, host: str, port: str, access_key: str, secret_key: str):
+```
+
+<br/>
+
+#### 3. 轉換為容器操作（Container Op）
+每個函數必須透過 `func_to_container_op` 轉換為容器操作，才能納入 Pipeline。
+這一段程式碼將上方的三個函數（`download_original_dataset`、`preprocessing`、`upload_training_dataset`）轉換為 **Pipeline** 的 **Task**，並指定對應的 **映像檔名稱**。
+```python
+download_original_dataset_op = func_to_container_op(
+    download_original_dataset, base_image=img_name_map["download_original_dataset"])
+preprocessing_op = func_to_container_op(
+    preprocessing, base_image=img_name_map["preprocessing"])
+upload_training_dataset_op = func_to_container_op(
+    upload_training_dataset, base_image=img_name_map["upload_training_dataset"])
+```
+**注意事項**：
+1. 函數名稱可自由命名，但必須在 Pipeline 定義中保持一致。
+2. 映像檔名稱不可更動，因為這些映像檔對應到已建構的 Docker 容器。
+
+<br/>
+
+#### 4. 定義 Pipeline
+最後，我們使用 `@dsl.pipeline` 註解來定義完整的 Pipeline。每個步驟（Task）按順序連接成完整的工作流程。
+```python
+@dsl.pipeline(
+    name='pipeline',
+    description='pipeline example'
+)
+def pipeline(preprocessing_task_uid: str, original_dataset_uid: str, training_dataset_uid: str, host: str, port: str, access_key: str, secret_key: str):
+```
+
+<br/>
+
+#### 5. 定義 Task 執行順序
+在 Pipeline 函數內，每個 Task（task1、task2、task3） 的變數名稱必須與前面定義的 Container Operation 變數名稱 保持一致。
+```python
+task1 = download_original_dataset_op(original_dataset_uid=original_dataset_uid,
+                                         host=host, port=port, access_key=access_key, secret_key=secret_key)
+
+task2 = preprocessing_op(input=task1.output)
+
+task3 = upload_training_dataset_op(input=task2.output, training_dataset_uid=training_dataset_uid,
+                                       host=host, port=port, access_key=access_key, secret_key=secret_key)
+
+```
+**注意事項**：
+1. `task1`、`task2`、`task3` 的變數名稱可以修改，但需要與前面定義的 `_op` 變數名稱保持一致。
+2. **變數名稱錯誤會導致 Pipeline 無法正常執行。**
+
+<br/>
+
+##### 6. 編譯 Pipeline 成 YAML 文件
+最後，將 Pipeline 編譯為 `pipeline.yaml`，以便部署至 Kubeflow。
+```python
+if __name__ == '__main__':
+    kfp.compiler.Compiler().compile(pipeline, 'pipeline.yaml')
+```
+此程式碼段不可變更，因為它是將 Pipeline 轉換為 Kubeflow YAML 文件的必要步驟。
+
+---
