@@ -100,9 +100,7 @@ urlpatterns = [
 
 Inference template使用者只需關心如何利用我們開發的 SDK 進行推論。SDK 的介紹在 [**關於 xApp/rApp**](https://www.notion.so/xApp-rApp-61e66013c6c64f0988dccdbcdf742225?pvs=21) 、 [AI/ML平台-Mitlab xApp/rApp SDK (尚未啟用)](https://www.notion.so/AI-ML-Mitlab-xApp-rApp-SDK-106b65a4cedb8018bed1e87eda22bf49?pvs=21) 
 
-# 不使用SDK的API文件
-
-## 推論服務
+# 使用推論服務
 
 此 API 允許讓使用者透過API取得模型推論結果
 

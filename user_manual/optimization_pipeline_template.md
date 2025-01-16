@@ -1,17 +1,17 @@
 # Optimization Pipeline 範例
-本頁面展示了一個完整的 Optimization Pipeline 範例，說明如何利用 Kubeflow Pipelines 建立模型的優化工作流。該範例包含三個主要步驟：下載優化數據集與模型、執行模型優化、上傳優化後的模型。
+本頁面展示了一個完整的 Optimization Pipeline 範例，說明如何利用 Kubeflow Pipelines 建立模型的優化工作流。該範例包含三個主要步驟：下載優化資料集與模型、執行模型優化、上傳優化後的模型。
 
 ---
 
 ## Training Pipeline 流程概述
-### 1. 下載數據集與模型（Download Dataset and Model）
+### 1. 下載資料集與模型（Download Dataset and Model）
 
-從遠端伺服器下載優化所需的數據集與模型，並將其存儲到本地目錄中，以便進行模型的優化過程。
+從訓練平台下載優化所需的資料集與模型，並將其存儲到本地目錄中，以便進行模型的優化過程。
 ### 2. 執行模型優化（Optimize Model）
 
-解壓縮下載的數據集和模型，然後根據指定的優化策略對模型進行再訓練，以提升模型的效能。
+解壓縮下載的資料集和模型，然後根據指定的優化策略對模型進行再訓練，以提升模型的效能。
 ### 3. 上傳優化後的模型（Upload Optimized Model）
-將優化後的模型檔案上傳至遠端伺服器，供其他應用程式或後續流程使用。
+將優化後的模型檔案上傳至訓練平台，供其他應用程式或後續流程使用。
 
 ---
 
@@ -191,7 +191,7 @@ if __name__ == '__main__':
 ---
 
 ## Optimization Pipeline 程式碼結構說明
-以下為完整的 Optimization Pipeline 程式碼結構解說，詳細說明了程式碼各區塊的功能、哪些部分可以修改、哪些部分不可變更，確保讀者能夠正確理解並靈活調整 Pipeline。
+以下為完整的 Optimization Pipeline 程式碼結構解說，詳細說明了程式碼各區塊的功能、哪些部分可以修改、哪些部分不可變更，確保使用者能夠正確理解並靈活調整 Pipeline。
 
 #### 1.引入 Kubeflow Pipelines 套件
 在程式碼的開頭，我們引入了必需的 **Kubeflow Pipelines (kfp)** 模組，這些模組負責 **Pipeline** 的定義與處理。
@@ -205,11 +205,11 @@ from kfp.components import func_to_container_op
 
 <br/>
 
-#### 2. 定義 Pipeline 組件（Component Functions）
-Pipeline 的核心是由三個步驟組成的組件（Components），每個步驟的功能以函數形式實現，並透過 `func_to_container_op` 轉換成容器操作（Container Op）。每個函數的結構如下：
+#### 2. 定義 Pipeline 元件（Component Functions）
+Pipeline 的核心是由三個步驟組成的元件（Components），每個步驟的功能以函數形式實現，並透過 `func_to_container_op` 轉換成容器操作（Container Op）。每個函數的結構如下：
 
-##### Step 1：下載數據集與模型（Download Dataset and Model）
-此函數負責從遠端伺服器下載指定的優化數據集與基礎模型，並將其存儲在本地目錄中。
+##### Step 1：下載資料集與模型（Download Dataset and Model）
+此函數負責從訓練平台下載指定的優化資料集與基礎模型，並將其存儲在本地目錄中。
 函數名稱：`download_optimization_files`
 * 函數名稱可更改，但需與下方的 `func_to_container_op` 綁定名稱保持一致。
 * 函數參數不可變更，因為它們對應 Kubeflow Pipeline 的 I/O 資料流。
@@ -218,7 +218,7 @@ def download_optimization_files(output: components.OutputPath(), optimization_da
 ```
 
 ##### Step 2：執行模型優化（Optimize Model）
-此函數負責解壓縮下載的數據集和模型，然後根據指定的優化策略對模型進行再訓練，以提升模型的效能。
+此函數負責解壓縮下載的資料集和模型，然後根據指定的優化策略對模型進行再訓練，以提升模型的效能。
 函數名稱：`optimize_model`
 * 函數名稱可更改，但需與下方的 `func_to_container_op` 綁定名稱保持一致。
 * 函數參數不可變更，因為它們對應 Kubeflow Pipeline 的 I/O 資料流。
@@ -227,7 +227,7 @@ def optimize_model(input: components.InputPath(), output: components.OutputPath(
 ```
 
 ##### Step 3：上傳優化後的模型（Upload Optimized Model）
-此函數負責將優化後的模型上傳至遠端伺服器。
+此函數負責將優化後的模型上傳至訓練平台。
 函數名稱：`upload_optimized_model`
 * 函數名稱可更改，但需與下方的 `func_to_container_op` 綁定名稱保持一致。
 * 函數參數不可變更，因為它們對應 Kubeflow Pipeline 的 I/O 資料流。

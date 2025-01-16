@@ -1,21 +1,21 @@
 # Training Pipeline 範例
-本頁面展示了一個完整的 Training Pipeline 範例，說明如何利用 Kubeflow Pipelines 建立一個典型的模型訓練工作流。該範例包含三個主要步驟：下載訓練數據集、訓練模型、上傳訓練完成的模型。
+本頁面展示了一個完整的 Training Pipeline 範例，說明如何利用 Kubeflow Pipelines 建立一個典型的模型訓練工作流。該範例包含三個主要步驟：下載訓練資料集、訓練模型、上傳訓練完成的模型。
 
 ---
 
 ## Training Pipeline 流程概述
-### 1. 下載訓練數據集（Download Training Dataset）
+### 1. 下載訓練資料集（Download Training Dataset）
 
-從遠端伺服器下載指定的訓練數據集（壓縮檔案），並將其存儲到本地的指定目錄中。此步驟確保數據集可用於後續的模型訓練過程。
+從訓練平台下載指定的訓練資料集（壓縮檔案），並將其存儲到本地的指定目錄中。此步驟確保資料集可用於後續的模型訓練過程。
 ### 2.訓練模型（Training）
 
-解壓縮下載的數據集，進行數據預處理與分割，並利用深度學習框架（如 TensorFlow）訓練模型。模型訓練完成後，將模型準確率與模型檔案保存到本地目錄中。
+解壓縮下載的資料集，進行資料預處理與分割，並利用深度學習框架（如 TensorFlow）訓練模型。模型訓練完成後，將模型準確率與模型檔案保存到本地目錄中。
 
 > 可選功能：紀錄Performance
 >  * 可選擇是否要**記錄模型準確率**，若需要可將準確率存入檔案，以便後續使用。
 
 ### 3.上傳模型（Upload Model）
-將訓練完成的模型檔案與模型準確率資訊上傳至遠端伺服器，供其他應用程式或後續流程使用。
+將訓練完成的模型檔案與模型準確率資訊上傳至訓練平台，供其他應用程式或後續流程使用。
 
 ---
 
@@ -220,8 +220,8 @@ from kfp.components import func_to_container_op
 #### 2. 定義 Pipeline 組件（Component Functions）
 Pipeline 的核心是由三個步驟組成的組件（Components），每個步驟的功能以函數形式實現，並透過 `func_to_container_op` 轉換成容器操作（Container Op）。每個函數的結構如下：
 
-##### Step1 : 下載訓練數據集（Download Training Dataset）
-此函數負責從遠端伺服器下載指定的數據集，並將其存儲在本地路徑中。
+##### Step1 : 下載訓練資料集（Download Training Dataset）
+此函數負責從訓練平台下載指定的資料集，並將其存儲在本地路徑中。
 函數名稱：`download_training_dataset`
 * 函數名稱可更改，但需與下方的 `func_to_container_op` 綁定名稱保持一致。
 * 函數參數不可變更，因為它們對應 Kubeflow Pipeline 的 I/O 資料流。
@@ -230,7 +230,7 @@ def download_training_dataset(output: components.OutputPath(), training_dataset_
 ```
 
 ##### Step2 : 訓練模型（Training）
-此函數負責解壓縮數據集、建立訓練和測試數據、定義模型結構，並進行模型訓練。
+此函數負責解壓縮資料集、建立訓練和測試資料、定義模型結構，並進行模型訓練。
 函數名稱：`training`
 * 函數名稱可更改，但需與下方的 `func_to_container_op` 綁定名稱保持一致。
 * 函數參數不可變更，因為它們對應 Kubeflow Pipeline 的 I/O 資料流。
@@ -254,7 +254,7 @@ with open(accuracy_file_path, 'w') as f:
     f.write(f"{model_accuracy}")
 ```
 ##### Step3 : 上傳模型（Upload Model）
-此函數負責將訓練好的模型及準確度結果上傳到遠端伺服器。
+此函數負責將訓練好的模型及準確度結果上傳到訓練平台。
 函數名稱：`upload_model`
 * 函數名稱可更改，但需與下方的 `func_to_container_op` 綁定名稱保持一致。
 * 函數參數不可變更，因為它們對應 Kubeflow Pipeline 的 I/O 資料流。

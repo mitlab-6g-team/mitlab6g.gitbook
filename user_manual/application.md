@@ -68,3 +68,30 @@
 2. 按下Delete按鈕即可刪除成功
 
     ![delete](images/application/delete.png)
+
+
+# 發布Application給代理端
+
+## 用途
+
+將所需的Application發布給Agent端，讓Agent端能看到Application內的資訊
+
+## 操作步驟
+
+1. 點擊上方的Agents
+   
+    ![publish1](images/application/publish1.png)
+
+2. 點擊要發布Application的Agent
+
+    ![publish2](images/application/publish2.png)
+
+3. 選擇要發布的Application，點擊Link Application後，按下Confirm
+
+    ![publish3](images/application/publish3.png)
+
+4. 成功發布Application給所需的代理端
+
+    ![publish4](images/application/publish4.png)
+
+
