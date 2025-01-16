@@ -10,6 +10,10 @@
 ### 2.訓練模型（Training）
 
 解壓縮下載的數據集，進行數據預處理與分割，並利用深度學習框架（如 TensorFlow）訓練模型。模型訓練完成後，將模型準確率與模型檔案保存到本地目錄中。
+
+> 可選功能：紀錄Performance
+>  * 可選擇是否要**記錄模型準確率**，若需要可將準確率存入檔案，以便後續使用。
+
 ### 3.上傳模型（Upload Model）
 將訓練完成的模型檔案與模型準確率資訊上傳至遠端伺服器，供其他應用程式或後續流程使用。
 
@@ -95,7 +99,7 @@ def training(input: components.InputPath(), output: components.OutputPath(), lea
     model.fit(x_train, y_train, batch_size=batch_size, epochs=1,
               validation_data=(x_validate, y_validate))
     
-    # save model accuracy to a file inside the output folder
+    # [Optional - 想紀錄Performance請加這段 (1/2) ] save model accuracy to a file inside the output folder
     model_accuracy = model.history.history['accuracy'][-1] 
     accuracy_file_path = f"""{output}/model_accuracy.txt"""
     output_dir = os.path.dirname(accuracy_file_path)
@@ -142,7 +146,7 @@ def upload_model(input: components.InputPath(), model_uid: str, host: str, port:
         file_path=model_uid
     )
 
-    # upload model accuracy
+    # [Optional - 想紀錄Performance請加這段 (2/2) ] upload model accuracy 
     accuracy_file_path = f"""{input}/model_accuracy.txt"""
     with open(accuracy_file_path, 'r') as f:
         model_accuracy = float(f.read())
@@ -233,7 +237,22 @@ def download_training_dataset(output: components.OutputPath(), training_dataset_
 ```python
 def training(input: components.InputPath(), output: components.OutputPath(), learning_rate: float):
 ```
+<br/>
 
+* 可選功能：紀錄Performance
+  * 可選擇是否 紀錄模型準確率，若需要則可將準確率存入檔案，以便後續使用。
+  * 若啟用，則會在 output 目錄內存放 model_accuracy.txt 檔案。
+```python
+# [Optional - 想紀錄Performance請加這段 (1/2) ] save model accuracy to a file inside the output folder
+model_accuracy = model.history.history['accuracy'][-1] 
+accuracy_file_path = f"""{output}/model_accuracy.txt"""
+output_dir = os.path.dirname(accuracy_file_path)
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
+with open(accuracy_file_path, 'w') as f:
+    f.write(f"{model_accuracy}")
+```
 ##### Step3 : 上傳模型（Upload Model）
 此函數負責將訓練好的模型及準確度結果上傳到遠端伺服器。
 函數名稱：`upload_model`
@@ -241,6 +260,22 @@ def training(input: components.InputPath(), output: components.OutputPath(), lea
 * 函數參數不可變更，因為它們對應 Kubeflow Pipeline 的 I/O 資料流。
 ```python
 def upload_model(input: components.InputPath(), model_uid: str, host: str, port: str, access_key: str, secret_key: str):
+```
+
+<br/>
+
+* 可選功能：上傳Performance
+  * 若 model_accuracy.txt 存在，則可選擇是否上傳模型的準確率資訊。
+```python
+# [Optional - 想紀錄Performance請加這段 (2/2) ] upload model accuracy 
+accuracy_file_path = f"""{input}/model_accuracy.txt"""
+with open(accuracy_file_path, 'r') as f:
+    model_accuracy = float(f.read())
+metric_manager = MetricUtility(credential_manager=credential_server)
+metric_manager.upload_accuracy(
+    model_uid=model_uid,
+    model_accuracy=model_accuracy
+)
 ```
 
 <br/>
