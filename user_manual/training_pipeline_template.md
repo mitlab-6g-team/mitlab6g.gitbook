@@ -224,7 +224,8 @@ Pipeline 的核心是由三個步驟組成的組件（Components），每個步�
 此函數負責從訓練平台下載指定的資料集，並將其存儲在本地路徑中。
 函數名稱：`download_training_dataset`
 * 函數名稱可更改，但需與下方的 `func_to_container_op` 綁定名稱保持一致。
-* 函數參數不可變更，因為它們對應 Kubeflow Pipeline 的 I/O 資料流。
+* 函數參數不可變更，除非有 `config` 從前端傳入的參數。
+* 建議在這邊跑模型訓練。
 ```python
 def download_training_dataset(output: components.OutputPath(), training_dataset_uid: str, host: str, port: str, access_key: str, secret_key: str):
 ```
@@ -234,14 +235,89 @@ def download_training_dataset(output: components.OutputPath(), training_dataset_
 函數名稱：`training`
 * 函數名稱可更改，但需與下方的 `func_to_container_op` 綁定名稱保持一致。
 * 函數參數不可變更，因為它們對應 Kubeflow Pipeline 的 I/O 資料流。
+> 使用者可以靈活運用 `config` 參數，用來快速調整參數。以 `learning_rate`為例，使用者只需在前端的 `config` 中帶入該參數，即可免去重新上傳 pipeline 的麻煩，僅需在前端進行更動即可。
+使用 `config` 參數時，請記得在下方的 `def pipeline()` 的參數列表中帶入使用者定義的變數。
+
+> 注意：`learning_rate` 參數需要從前端的 `config` 中以 `{"learning_rate": 0.0}` 的形式帶入。
 ```python
 def training(input: components.InputPath(), output: components.OutputPath(), learning_rate: float):
 ```
+
 <br/>
 
-* 可選功能：紀錄Performance
-  * 可選擇是否 紀錄模型準確率，若需要則可將準確率存入檔案，以便後續使用。
-  * 若啟用，則會在 output 目錄內存放 model_accuracy.txt 檔案。
+#### 3. Config內部的參數須帶入function中
+在 `training`函數內部，需將 **config 內的參數** 帶入函數執行，以便動態調整模型的超參數，例如：
+
+* `learning_rate`: 學習率
+* `batch_size`: 批次大小
+* `epochs`: 訓練輪數
+這些參數應由 Pipeline 的使用者提供，並傳遞給 training 函數，確保訓練過程可靈活調整。
+
+```python
+def training(input: components.InputPath(), output: components.OutputPath(), learning_rate: float):
+    import os
+    from mitlab_aiml_tools.pipeline.compress import CompressionUtility
+    import numpy as np
+    from sklearn.model_selection import train_test_split
+    from tensorflow.keras.models import Sequential
+    from tensorflow.keras.layers import LSTM, Dense, Dropout
+    from tensorflow.keras.optimizers import Adam
+
+    # decompress training dataset in input path
+    input_file_path = f"""{input}/training_dataset.zip"""
+    decompress_folder_path = "./training_dataset/"
+    decompress_file_path = "./training_dataset/training_dataset.npy"
+    os.makedirs(decompress_folder_path, exist_ok=True)
+    CompressionUtility.decompress(
+        compressed_file_path=input_file_path, extract_path=decompress_folder_path)
+
+    # make train and test
+    training_dataset = np.load(decompress_file_path, allow_pickle=True)
+    x = np.array([item[0] for item in training_dataset[:100]])
+    y = np.array([item[1] for item in training_dataset[:100]])
+    x_train, x_test, y_train, y_test = train_test_split(
+        x, y, test_size=0.2, random_state=42)
+    x_test, x_validate, y_test, y_validate = train_test_split(
+        x_test, y_test, test_size=0.5, random_state=42)
+
+    # 定義模型架構，並將 config 內的參數應用於模型
+    model = Sequential()
+    model.add(LSTM(units=64, input_shape=(100, 3)))
+    model.add(Dropout(0.2))
+    model.add(Dense(32, activation='relu'))
+    model.add(Dense(3, activation='linear'))
+
+    # Compile the model
+    adam_optimizer = Adam(learning_rate=learning_rate)
+    model.compile(loss='mean_squared_error',
+                  optimizer=adam_optimizer, metrics=['accuracy'])
+
+    # Train the model on your data
+    batch_size = 4
+    model.fit(x_train, y_train, batch_size=batch_size, epochs=1,
+              validation_data=(x_validate, y_validate))
+        
+    with open(accuracy_file_path, 'w') as f:
+        f.write(f"{model_accuracy}")
+
+    # save model
+    model_folder_path = "./model/"
+    mode_file_path = "./model/model.h5"
+    os.makedirs(model_folder_path, exist_ok=True)
+    model.save(mode_file_path)
+
+    # compress model
+    compress_folder_path = output
+    compress_file_path = f"""{output}/model.zip"""
+    os.makedirs(compress_folder_path, exist_ok=True)
+    CompressionUtility.compress(
+        source_path=model_folder_path, compressed_file_path=compress_file_path)
+```
+
+<br/>
+
+#### 4. 可選功能：紀錄 Performance
+可選擇是否 **紀錄模型準確率**，若需要則可將準確率存入檔案，以便後續使用。
 ```python
 # [Optional - 想紀錄Performance請加這段 (1/2) ] save model accuracy to a file inside the output folder
 model_accuracy = model.history.history['accuracy'][-1] 
@@ -253,19 +329,23 @@ if not os.path.exists(output_dir):
 with open(accuracy_file_path, 'w') as f:
     f.write(f"{model_accuracy}")
 ```
-##### Step3 : 上傳模型（Upload Model）
+
+<br/>
+
+#### 5. 上傳模型（Upload Model）
 此函數負責將訓練好的模型及準確度結果上傳到訓練平台。
 函數名稱：`upload_model`
 * 函數名稱可更改，但需與下方的 `func_to_container_op` 綁定名稱保持一致。
-* 函數參數不可變更，因為它們對應 Kubeflow Pipeline 的 I/O 資料流。
+* 函數參數不可變更，除非有需要新增 `config` 之類從前端傳入的參數。
+* 建議在這邊進行模型上傳的部分。
 ```python
 def upload_model(input: components.InputPath(), model_uid: str, host: str, port: str, access_key: str, secret_key: str):
 ```
 
 <br/>
 
-* 可選功能：上傳Performance
-  * 若 model_accuracy.txt 存在，則可選擇是否上傳模型的準確率資訊。
+可選功能：上傳Performance
+  * 若 `model_accuracy.txt` 存在，則可選擇是否上傳模型的準確率資訊。
 ```python
 # [Optional - 想紀錄Performance請加這段 (2/2) ] upload model accuracy 
 accuracy_file_path = f"""{input}/model_accuracy.txt"""
@@ -280,7 +360,7 @@ metric_manager.upload_accuracy(
 
 <br/>
 
-#### 3. 轉換為容器操作（Container Op）
+#### 6. 轉換為容器操作（Container Op）
 每個函數必須透過 `func_to_container_op` 轉換為容器操作，才能納入 Pipeline。
 這一段程式碼將上方的三個函數（`download_training_dataset`、`training`、`upload_model`）轉換為 **Pipeline** 的 **Task**，並指定對應的 **映像檔名稱**。
 ```python
@@ -297,8 +377,12 @@ upload_model_op = func_to_container_op(
 
 <br/>
 
-#### 4. 定義 Pipeline
+#### 7. 定義 Pipeline
 最後，我們使用 `@dsl.pipeline` 註解來定義完整的 Pipeline。每個步驟（Task）按順序連接成完整的工作流程。
+此函數定義了 Pipeline 的各項傳入參數與執行參數。
+* pipeline 傳入參數不得修改。
+* 不過，可以新增從 `config` 傳入的參數，例如 `learning_rate`。
+* 使用這類從 `config` 帶入的參數時，請務必將其加入函數的參數列表中，作為自定義參數。
 ```python
 @dsl.pipeline(
     name='pipeline',
@@ -309,7 +393,7 @@ def pipeline(training_task_uid: str, training_dataset_uid: str, model_uid: str, 
 
 <br/>
 
-#### 5. 定義 Task 執行順序
+#### 8. 定義 Task 執行順序
 在 Pipeline 函數內，每個 Task（task1、task2、task3） 的變數名稱必須與前面定義的 Container Operation 變數名稱 保持一致。
 ```python
 task1 = download_training_dataset_op(training_dataset_uid=training_dataset_uid,
@@ -327,7 +411,7 @@ task3 = upload_model_op(input=task2.output, model_uid=model_uid,
 
 <br/>
 
-#### 6. 編譯 Pipeline 成 YAML 文件
+#### 9. 編譯 Pipeline 成 YAML 文件
 最後，將 Pipeline 編譯為 `pipeline.yaml`，以便部署至 Kubeflow。
 ```python
 if __name__ == '__main__':

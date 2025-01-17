@@ -210,8 +210,9 @@ Pipeline 的核心是由三個步驟組成的組件（Components），每個步�
 此步驟的目標是從訓練平台下載指定的資料集，並將其存儲在指定的輸出路徑。
 
 函數名稱：`download_original_dataset`
-* 函數名稱可更改，但需與下方的 `func_to_container_op` 綁定名稱保持一致。
+* 函數參數不可變更，除非有需要在前端加入 `config` 的參數。
 * 函數參數不可變更，因為它們對應 Kubeflow Pipeline 的 I/O 資料流。
+* 建議使用此函數來下載原始資料集。
 ```python
 def download_original_dataset(output: components.OutputPath(), original_dataset_uid: str, host: str, port: str, access_key: str, secret_key: str):
 ```
@@ -220,7 +221,8 @@ def download_original_dataset(output: components.OutputPath(), original_dataset_
 此步驟負責解壓縮資料集、標準化資料，並將其分割為序列與標籤對，然後存儲為壓縮檔案格式。
 函數名稱：`preprocessing`
 * 函數名稱可更改，但需與下方的 `func_to_container_op` 綁定名稱保持一致。
-* 函數參數不可變更，因為它們對應 Kubeflow Pipeline 的 I/O 資料流。
+* 函數參數不可變更，除非有需要使用 `config` 傳入的參數才可新增。
+* 建議在這裡完成原始資料的處理，並輸出訓練資料。
 ```python
 def preprocessing(input: components.InputPath(), output: components.OutputPath()):
 ```
@@ -229,7 +231,8 @@ def preprocessing(input: components.InputPath(), output: components.OutputPath()
 此步驟將預處理後的資料集上傳至訓練平台，供其他應用程序使用。
 函數名稱：`upload_training_dataset`
 * 函數名稱可更改，但需與下方的 `func_to_container_op` 綁定名稱保持一致。
-* 函數參數不可變更，因為它們對應 Kubeflow Pipeline 的 I/O 資料流。
+* 函數參數不可變更，除非要使用 `config` 或其他由前端傳入的參數才可新增。
+* 建議使用此函數來上傳訓練資料。
 ```python
 def upload_training_dataset(input: components.InputPath(), training_dataset_uid: str, host: str, port: str, access_key: str, secret_key: str):
 ```
@@ -255,6 +258,7 @@ upload_training_dataset_op = func_to_container_op(
 
 #### 4. 定義 Pipeline
 最後，我們使用 `@dsl.pipeline` 註解來定義完整的 Pipeline。每個步驟（Task）按順序連接成完整的工作流程。
+* Pipeline 傳入參數不可更改，除了新增由前端用 config 傳入的參數以外。
 ```python
 @dsl.pipeline(
     name='pipeline',
