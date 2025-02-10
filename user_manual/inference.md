@@ -8,16 +8,14 @@
 
 # 如何實作推論功能？
 
-當請求發送時，接收請求的function位於 **`main/apps/inference_exe/actors/InferenceServiceHandler`**，該部分處理從接收請求到回應的過程。使用者自定義的功能實作在 **`main/apps/inference_exe/actors/services/inference`**，我們稱之為服務函數。
+當請求發送時，接收請求的function位於 **`main/apps/inference_exe/actors/InferenceServiceHandler`**，該部分處理從接收請求到回應的過程。使用者自定義的功能實作在 **`main/apps/inference_exe/services/inference`**，我們稱之為服務函數。
 
-服務函數中將包含兩個類別：Model 和 InferenceService。
+服務函數中將包含兩個類別：<r>`Model`</r> 和 <r>`InferenceService`</r>。
 
-對於 Model 類別，類別內的功能應組成模型需要提供的基本服務。
-
-使用者必須根據不同的依賴和版本實作模型加載和預測功能，以使inference host正常運作。
+對於 Model 類別，類別內的功能應組成模型需要提供的基本服務。使用者必須根據不同的依賴和版本實作模型加載和預測功能，以使inference host正常運作。
 
 ```python
-# main/apps/inference_exe/actors/services/inference
+# main/apps/inference_exe/services/inference
 # Model Basic Functions
 class Model():
     "Inference Functions"
@@ -35,7 +33,7 @@ class Model():
 InferenceService 類別幫助使用者進行推論應用。我們已經為使用者規劃了基本功能，以完成推論過程。請在 `input_data_transform()` 中實作數據預處理或數據轉換過程。
 
 ```python
-# main/apps/inference_exe/actors/services/inference
+# main/apps/inference_exe/services/inference
 # Called by Main Functions
 class InferenceService():
     model = None
@@ -98,9 +96,7 @@ urlpatterns = [
 ]
 ```
 
-Inference template使用者只需關心如何利用我們開發的 SDK 進行推論。SDK 的介紹在 [**關於 xApp/rApp**](https://www.notion.so/xApp-rApp-61e66013c6c64f0988dccdbcdf742225?pvs=21) 、 [AI/ML平台-Mitlab xApp/rApp SDK (尚未啟用)](https://www.notion.so/AI-ML-Mitlab-xApp-rApp-SDK-106b65a4cedb8018bed1e87eda22bf49?pvs=21) 
-
-# 使用推論服務
+# 如何使用推論服務？
 
 此 API 允許讓使用者透過API取得模型推論結果
 

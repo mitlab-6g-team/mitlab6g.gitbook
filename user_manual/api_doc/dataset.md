@@ -1,11 +1,26 @@
-## Dataset管理
+{% raw %}
+<style>
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+</style>
+
+
+# Dataset管理
 
 ### 上傳訓練用的Original/Training Dataset檔案
-**請求方式**：POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/OFbaCJE62lcPVbZj
 
-**描述**：此 API 允許驗證成功的用戶根據提供的Dataset名稱、描述、類別、副檔名、所屬Project的UID和Dataset檔案，來新增Dataset檔案及資訊。
+<g>`POST`</g> `http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/OFbaCJE62lcPVbZj`
 
-#### 請求參數
+此 API 允許驗證成功的用戶根據提供的Dataset名稱、描述、類別、副檔名、所屬Project的UID和Dataset檔案，來新增Dataset檔案及資訊。
+
+#### Headers
+| Name | Value | Note |
+| --------- | ---------------- |-|
+| Content-Type | multipart/form-data | -|
+
+#### Body
+  
 | 參數      | 必填 | 描述             |備註|
 | --------- | ---- | ---------------- |-|
 | name| 是| Dataset名稱| -|
@@ -15,13 +30,8 @@
 |extension|是|Dataset副檔名|zip|
 |file|是|Dataset檔案|-|
 
-#### 範例請求
-
-Example RAW Request
-```json
-POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/OFbaCJE62lcPVbZj
-Content-Type: multipart/form-data
-
+#### 請求範例
+{% codetabs name="Raw Request", type="json" -%}
 {
     "name":"test_dataset",
     "description":"test dataset description",
@@ -30,12 +40,10 @@ Content-Type: multipart/form-data
     "extension": "zip",
     "file":<file> // only zip file acceptable
 }
-```
-Example CURL Request
-```bash
+{%- language name="cURL Request", type="bash" -%}
 curl --request POST \
-  --url http://<host_ip>:<backend_entrypoint>
-  /api/v1.1.1/entrypoint/Router/parse/OFbaCJE62lcPVbZj \
+  --url http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}
+  /api/{{ book.entrypoint_version }}/entrypoint/Router/parse/OFbaCJE62lcPVbZj \
   --header 'Content-Type: multipart/form-data' \
   --form name=test \
   --form description=mitlab \
@@ -43,14 +51,11 @@ curl --request POST \
   --form f_project_uid=e2454e78-5d23-4d5c-be87-ca2a3e679291 \
   --form extension=zip \
   --form file=@path/to/original_dataset.zip
-```
+{% endcodetabs %}
 
-#### 範例回應
+#### 回應範例
 
-**成功回應**：
-Statue Code:200
-
-```json
+{% codetabs name="200", type="json" -%}
 {
   "detail": "Metadata created and File uploaded successfully",
   "data": {
@@ -68,15 +73,22 @@ Statue Code:200
     "f_project_uid": "e2454e78-5d23-4d5c-be87-ca2a3e679291"
   }
 }
-```
+{% endcodetabs %}
 
+---
 
 ### 上傳優化用的Original/Optimization Dataset檔案
-**請求方式**：POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/5fk1gVLi8q0mcHf4
 
-**描述**：此 API 允許驗證成功的用戶根據提供的Dataset名稱、描述、類別、副檔名、所屬Application的UID和Dataset檔案，來新增Dataset檔案及資訊。
+<g>`POST`</g> `http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/5fk1gVLi8q0mcHf4`
 
-#### 請求參數
+此 API 允許驗證成功的用戶根據提供的Dataset名稱、描述、類別、副檔名、所屬Application的UID和Dataset檔案，來新增Dataset檔案及資訊。
+
+#### Headers
+| Name | Value | Note |
+| --------- | ---------------- |-|
+| Content-Type | multipart/form-data | -|
+
+#### Body
 | 參數      | 必填 | 描述             |備註|
 | --------- | ---- | ---------------- |-|
 | name| 是| Dataset名稱| -|
@@ -86,13 +98,8 @@ Statue Code:200
 |extension|是|Dataset副檔名|zip|
 |file|是|Dataset檔案|-|
 
-#### 範例請求
-
-Example RAW Request
-```json
-POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/5fk1gVLi8q0mcHf4
-Content-Type: multipart/form-data
-
+#### 請求範例
+{% codetabs name="Raw Request", type="json" -%}
 {
     "name":"test_dataset",
     "description":"test dataset description",
@@ -101,11 +108,9 @@ Content-Type: multipart/form-data
     "extension": "zip",
     "file":<file> // only zip file acceptable
 }
-```
-Example CURL Request
-```bash
+{%- language name="cURL Request", type="bash" -%}
 curl --request POST \
-  --url http://<host_ip>:<backend_entrypoint>/api/v1.1.1/entrypoint/Router/parse/5fk1gVLi8q0mcHf4 \
+  --url http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/5fk1gVLi8q0mcHf4 \
   --header 'Content-Type: multipart/form-data' \
   --form name=test \
   --form description=mitlab \
@@ -113,14 +118,10 @@ curl --request POST \
   --form f_application_uid=90889d16-0d70-4816-a4d9-f2f9762a934e \
   --form extension=zip \
   --form file=@path/to/original_dataset.zip
-```
+{% endcodetabs %}
 
-#### 範例回應
-
-**成功回應**：
-Statue Code:200
-
-```json
+#### 回應範例
+{% codetabs name="200", type="json" -%}
 {
   "detail": "Metadata created and File uploaded successfully",
   "data": {
@@ -138,101 +139,91 @@ Statue Code:200
     "f_application_uid": "90889d16-0d70-4816-a4d9-f2f9762a934e"
   }
 }
-```
+{% endcodetabs %}
 
 ---
 
 ### 查詢Project底下訓練用的Orignal/Training Dataset資訊
-**請求方式**：POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/MyC2aIHtzkZJrEGi
 
-**描述**：此 API 允許驗證成功的用戶根據提供 訓練用的Orignal/Training Dataset 所屬Project的UID，來查詢所屬Project下的所有Orignal/Training Dataset資訊。
+<g>`POST`</g> `http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/MyC2aIHtzkZJrEGi`
 
-#### 請求參數
+此 API 允許驗證成功的用戶根據提供 訓練用的Orignal/Training Dataset 所屬Project的UID，來查詢所屬Project下的所有Orignal/Training Dataset資訊。
+
+#### Headers
+| Name | Value | Note |
+| --------- | ---------------- |-|
+| Content-Type | application/json | -|
+
+#### Body
 | 參數      | 必填 | 描述             |備註|
 | --------- | ---- | ---------------- |-|
-| f_project_uid| 是| 所屬Project的UID| -|
+| f_project_uid | 是 | 所屬Project的UID | -|
 
-#### 範例請求
-
-Example RAW Request
-```json
-POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/MyC2aIHtzkZJrEGi
-Content-Type: application/json
-
+#### 請求範例
+{% codetabs name="Raw Request", type="json" -%}
 {
     "f_project_uid":"e2454e78-5d23-4d5c-be87-ca2a3e679291"
 }
-```
-Example CURL Request
-```bash
+{%- language name="cURL Request", type="bash" -%}
 curl --request POST \
-  --url http://<host_ip>:<backend_entrypoint>/api/v1.1.1/entrypoint/Router/parse/MyC2aIHtzkZJrEGi \
+  --url http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/MyC2aIHtzkZJrEGi \
   --header 'Content-Type: application/json' \
   --data '{
     "f_project_uid":"e2454e78-5d23-4d5c-be87-ca2a3e679291"
 }'
-```
+{% endcodetabs %}
 
-#### 範例回應
+#### 回應範例
 
-**成功回應**：
-Statue Code:200
-
-```json
+{% codetabs name="200", type="json" -%}
 {
   "detail": "Metadatas retrieved successfully",
   "data": {
-			<List: Project Original Datasets and Training Datasets>
+		<List: Project Original Datasets and Training Datasets>
 	}
 }
-```
+{% endcodetabs %}
 
+---
 
 ### 查詢Application底下優化用的Original/Optimization Dataset資訊
-**請求方式**：POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/1sphuopUuLnIqoPU
 
-**描述**：此 API 允許驗證成功的用戶根據提供 優化用的Original/Optimization Dataset 所屬Application的UID，來查詢所屬Application下的所有Original/Optimization Dataset資訊。
+<g>`POST`</g> `http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/1sphuopUuLnIqoPU`
 
-#### 請求參數
+此 API 允許驗證成功的用戶根據提供 優化用的Original/Optimization Dataset 所屬Application的UID，來查詢所屬Application下的所有Original/Optimization Dataset資訊。
+
+#### Headers
+| Name | Value | Note |
+| --------- | ---------------- |-|
+| Content-Type | application/json | -|
+
+#### Body
 | 參數      | 必填 | 描述             |備註|
 | --------- | ---- | ---------------- |-|
 | f_application_uid| 是| 所屬Application的UID| -|
 
-#### 範例請求
+#### 請求範例
 
-Example RAW Request
-```json
-POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/1sphuopUuLnIqoPU
-Content-Type: application/json
-
+{% codetabs name="Raw Request", type="json" -%}
 {
     "f_application_uid":"90889d16-0d70-4816-a4d9-f2f9762a934e"
 }
-```
-Example CURL Request
-```bash
+{%- language name="cURL Request", type="bash" -%}
 curl --request POST \
-  --url http://<host_ip>:<backend_entrypoint>/api/v1.1.1/entrypoint/Router/parse/1sphuopUuLnIqoPU \
+  --url http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/1sphuopUuLnIqoPU \
   --header 'Content-Type: application/json' \
   --data '{
     "f_application_uid":"90889d16-0d70-4816-a4d9-f2f9762a934e"
 }'
-```
+{% endcodetabs %}
 
-#### 範例回應
-
-**成功回應**：
-Statue Code:200
-
-```json
+#### 回應範例
+{% codetabs name="200", type="json" -%}
 {
   "detail": "Metadatas retrieved successfully",
   "data": {
-			<List: Application Original Datasets and Optimization Datasets>
+		<List: Application Original Datasets and Optimization Datasets>
 	}
 }
-```
-
-
-
+{% endcodetabs %}
 

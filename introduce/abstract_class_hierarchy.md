@@ -4,15 +4,15 @@
 
 ![Abstract Class](images/abstract_class.png)
 
-### **Projects**
+### Projects
 
 專案（Projects）是一個頂層的抽象類別，包含了組織中由專案經理管理的多個應用程式。
 
-### **Applications**
+### Applications
 
 應用（Applications）是專案中的一個抽象類別，用來區分不同的目標，例如同屬無人機專案之鐘的無人機路徑預測或無人機電池預測。你可以在相同應用程式內選擇表現最佳的模型。
 
-### **Positions**
+### Positions
 
 位置（Positions）是一個在部署平台上非常重要的類別。它相對於部署平台而言是相當獨立的，這意味著部署平台和邊緣伺服器可以分別建置在不同的虛擬機甚至不同的實體伺服器上。位置的特性讓使用者能夠將模型部署至靠近xApp所在位置的邊緣伺服器。
 
@@ -38,7 +38,7 @@ Positions的目標有下列幾點：
 
 **Inference Host**
 
-inference host是實際進行推理任務的地方。inference host由inference template和model 組成。使用者只需要使用我們的範本來實作功能，或者按照介面來建立自己的模板。詳細資訊請參閱頁面 [**Let's start to build an inference host! (未完成)**](https://www.notion.so/Let-s-start-to-build-an-inference-host-e0fca45d96eb4ad3b37c90d3239cda01?pvs=21) ！
+inference host是實際進行推理任務的地方。inference host由inference template和model 組成。使用者只需要使用我們的範本來實作功能，或者按照介面來建立自己的模板。詳細資訊請參閱頁面 [**inference template寫法**](./user_manual/inference.md) 。
 
 **Kubernetes Service**
 

@@ -6,7 +6,7 @@
 ## API Server
 | Host Name | IP | DNS | Description |
 | --- | --- | --- | --- |
-| MITLab Host | 140.118.122.246 | - | 需要使用學校VPN才可連通 |
+| MITLab Host | {{ book.mitlab_host }} | - | 需要使用學校VPN才可連通 |
 | **Server Name** | **Port** | **Version** | **Description** |
-| AI/ML Dashboard | 40000 | v1.1.8 | AI/ML前端網站入口 |
-| Backend Entrypoint | 50000 | v1.1.5 | 後端操作Entrypoint |
+| AI/ML Dashboard | {{ book.dashboard_port }} | v1.1.8 | AI/ML前端網站入口 |
+| Backend Entrypoint | {{ book.entrypoint_port }} | {{ book.entrypoint_version }} | 後端操作Entrypoint |

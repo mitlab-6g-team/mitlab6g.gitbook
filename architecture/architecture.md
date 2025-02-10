@@ -9,7 +9,7 @@
 
 ---
 
-# AI/ML Intelligent Platform
+# AIML Intelligent Platform
 
 ![ai_ml](images/ai_ml.png)
 
@@ -20,7 +20,7 @@
   * 管線執行後，模型由**訓練系統**完成訓練，並將訓練好的模型打包為Docker Image，推送至Harbor(私有容器倉庫)。
   * 訓練完成的模型可以透過Dahboard發布給Deployment Platform，用於進一步的部屬操作。
 
-# 部屬平台（Deployment Platform）
+# 部屬平台 Deployment Platform
 
 ---
 
@@ -35,7 +35,7 @@
 
 ---
 
-# 邊緣伺服器（Edge Server）
+# 邊緣伺服器 Edge Server
 
 ![Edge Server](images/edge_server.png)
 

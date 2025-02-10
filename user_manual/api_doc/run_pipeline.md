@@ -1,19 +1,31 @@
-## Pipeline運行
+{% raw %}
+<style>
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+</style>
+
+# Pipeline運行
 
 ### 運行Preprocessing Task
-**請求方式**：POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/jPqyAFWh7hBKRRNK
+<g>`POST`</g> `http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/jPqyAFWh7hBKRRNK`
 
-**描述**：此 API 允許驗證成功的用戶根據提供的：
+此 API 允許驗證成功的用戶根據提供的：
 
-驗證執行 Task 的權限：存取帳號、密碼
+- 驗證執行 Task 的權限：`存取帳號`、`密碼`
 
-建立 Task 的資訊：名稱、描述、所屬的Pipeline的UID
+- 建立 Task 的資訊：`名稱`、`描述`、`所屬的Pipeline的UID`
 
-Preprocessing所需的物件：Original Dataset的UID、Original Dataset的種類、Config的UID、Build File的UID
+- Preprocessing所需的物件：`Original Dataset的UID`、`Original Dataset的種類`、`Config的UID`、`Build File的UID`
 
-Preprocessing工作完的Dataset資訊：名稱、描述、種類、副檔名
+- Preprocessing工作完的Dataset資訊：`名稱`、`描述`、`種類`、`副檔名`
 
-#### 請求參數
+#### Headers
+| Name | Value | Note |
+| --------- | ---------------- |-|
+| Content-Type | application/json | -|
+
+#### Body
 | 參數      | 必填 | 描述             |備註|
 | --------- | ---- | ---------------- |-|
 | access_key| 是| 存取帳號| -|
@@ -30,13 +42,8 @@ Preprocessing工作完的Dataset資訊：名稱、描述、種類、副檔名
 |dataset_type|是|Dataset種類|training/optimization|
 |dataset_file_extension|是|Dataset副檔名|zip|
 
-#### 範例請求
-
-Example RAW Request
-```json
-POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/jPqyAFWh7hBKRRNK
-Content-Type: application/json
-
+#### 請求範例
+{% codetabs name="Raw Request", type="json" -%}
 {
     "access_key":"user1",
     "secret_key":"test",
@@ -59,11 +66,9 @@ Content-Type: application/json
     "dataset_type":"training",
     "dataset_file_extension": "zip"
 }
-```
-Example CURL Request
-```bash
+{%- language name="cURL Request", type="bash" -%}
 curl --request POST \
-  --url http://<host_ip>:<backend_entrypoint>/api/v1.1.1/entrypoint/Router/parse/jPqyAFWh7hBKRRNK \
+  --url http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/jPqyAFWh7hBKRRNK \
   --header 'Content-Type: application/json' \
   --data '{
     "access_key":"user1",
@@ -88,14 +93,10 @@ curl --request POST \
     "dataset_type":"training",
     "dataset_file_extension": "zip"
 }'
-```
+{% endcodetabs %}
 
-#### 範例回應
-
-**成功回應**：
-Statue Code:200
-
-```json
+#### 回應範例
+{% codetabs name="200", type="json" -%}
 {
   "detail": "Excute task successfully",
   "data": {
@@ -112,23 +113,30 @@ Statue Code:200
     "f_pipeline_uid": "37e952be-7cd8-463e-b3da-d28c47ed860c"
   }
 }
-```
+{% endcodetabs %}
+
+---
 
 
 ### 運行Training Task
-**請求方式**：POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/q8uzMBcM5YJH6dPf
+<g>`POST`</g> `http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/q8uzMBcM5YJH6dPf`
 
-**描述**：此 API 允許驗證成功的用戶根據提供的：
+此 API 允許驗證成功的用戶根據提供的：
 
-驗證執行 Task 的權限：存取帳號、密碼
+- 驗證執行 Task 的權限：`存取帳號`、`密碼`
 
-建立 Task 的資訊：名稱、描述、所屬Pipeline的UID
+- 建立 Task 的資訊：`名稱`、`描述`、`所屬Pipeline的UID`
 
-訓練所需的物件：Training Dataset的UID、 Dataset種類、Config的UID、Build File的UID
+- 訓練所需的物件：`Training Dataset的UID`、 `Dataset種類`、`Config的UID`、`Build File的UID`
 
-Training Task完成的Model資訊：名稱 、描述、 種類、輸入格式、輸出格式、副檔名
+- Training Task完成的Model資訊：`名稱`、`描述`、`種類`、`輸入格式`、`輸出格式`、`副檔名`
 
-#### 請求參數
+#### Headers
+| Name | Value | Note |
+| --------- | ---------------- |-|
+| Content-Type | application/json | -|
+
+#### Body
 | 參數      | 必填 | 描述             |備註|
 | --------- | ---- | ---------------- |-|
 | access_key| 是| 存取帳號| -|
@@ -147,13 +155,8 @@ Training Task完成的Model資訊：名稱 、描述、 種類、輸入格式、
 |model_output_format|是|Model輸出格式|-|
 |model_file_extension|是|Model副檔名|zip|
 
-#### 範例請求
-
-Example RAW Request
-```json
-POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/q8uzMBcM5YJH6dPf
-Content-Type: application/json
-
+#### 請求範例
+{% codetabs name="Raw Request", type="json" -%}
 {
     "access_key":"user1",
     "secret_key":"test",
@@ -178,11 +181,9 @@ Content-Type: application/json
     "model_output_format": "float32",
     "model_file_extension": "zip"
 }
-```
-Example CURL Request
-```bash
+{%- language name="cURL Request", type="bash" -%}
 curl --request POST \
-  --url http://<host_ip>:<backend_entrypoint>/api/v1.1.1/entrypoint/Router/parse/q8uzMBcM5YJH6dPf \
+  --url http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/q8uzMBcM5YJH6dPf \
   --header 'Content-Type: application/json' \
   --data '{
     "access_key":"user1",
@@ -208,14 +209,11 @@ curl --request POST \
     "model_output_format": "float32",
     "model_file_extension": "zip"
 }'
-```
+{% endcodetabs %}
 
-#### 範例回應
+#### 回應範例
 
-**成功回應**：
-Statue Code:200
-
-```json
+{% codetabs name="200", type="json" -%}
 {
   "detail": "Excute task successfully",
   "data": {
@@ -232,23 +230,30 @@ Statue Code:200
     "f_pipeline_uid": "59d52295-ed5a-499c-b70e-ce42d35d765c"
   }
 }
-```
+{% endcodetabs %}
+
+---
 
 
 ### 運行Optimization Task
-**請求方式**：POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/Oi6u8dkur8GTKPxS
+<g>`POST`</g> `http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/Oi6u8dkur8GTKPxS`
 
-**描述**：此 API 允許驗證成功的用戶根據提供的：
+此 API 允許驗證成功的用戶根據提供的：
 
-驗證執行 Task 的權限：存取帳號、密碼
+- 驗證執行 Task 的權限：`存取帳號`、`密碼`
 
-建立 Task 的資訊：名稱、描述、所屬Pipeline的UID
+- 建立 Task 的資訊：`名稱`、`描述`、`所屬Pipeline的UID`
+  
+- Optimization所需的物件：`已訓練好的Model的UID`、`訓練Dataset的UID`、`Dataset種類`、`Config的UID`、`Build File的UID`
 
-Optimization所需的物件：已訓練好的Model的UID、訓練Dataset的UID、Dataset種類、Config的UID、Build File的UID
+- Optimization Task完成的Model資訊：`名稱`、`描述`、`種類`、`輸入格式`、`輸出格式`、`副檔名`
 
-Optimization Task完成的Model資訊：名稱 、描述、 種類、輸入格式、輸出格式 和 副檔名
+#### Headers
+| Name | Value | Note |
+| --------- | ---------------- |-|
+| Content-Type | application/json | -|
 
-#### 請求參數
+#### Body
 | 參數      | 必填 | 描述             |備註|
 | --------- | ---- | ---------------- |-|
 | access_key| 是| 存取帳號| -|
@@ -268,13 +273,8 @@ Optimization Task完成的Model資訊：名稱 、描述、 種類、輸入格�
 |model_output_format|是|Model輸出格式|-|
 |model_file_extension|是|Model副檔名|zip|
 
-#### 範例請求
-
-Example RAW Request
-```json
-POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/Oi6u8dkur8GTKPxS
-Content-Type: application/json
-
+#### 請求範例
+{% codetabs name="Raw Request", type="json" -%}
 {
     "access_key":"user1",
     "secret_key":"test",
@@ -300,11 +300,9 @@ Content-Type: application/json
     "model_output_format": "float32",
     "model_file_extension": "zip"
 }
-```
-Example CURL Request
-```bash
+{%- language name="cURL Request", type="bash" -%}
 curl --request POST \
-  --url http://<host_ip>:<backend_entrypoint>/api/v1.1.1/entrypoint/Router/parse/Oi6u8dkur8GTKPxS \
+  --url http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/Oi6u8dkur8GTKPxS \
   --header 'Content-Type: application/json' \
   --data '{
     "access_key":"user1",
@@ -331,14 +329,10 @@ curl --request POST \
     "model_output_format": "float32",
     "model_file_extension": "zip"
 }
-```
+{% endcodetabs %}
 
-#### 範例回應
-
-**成功回應**：
-Statue Code:200
-
-```json
+#### 回應範例
+{% codetabs name="200", type="json" -%}
 {
   "detail": "Excute task successfully",
   "data": {
@@ -355,48 +349,43 @@ Statue Code:200
     "f_pipeline_uid": "0863f72a-2f98-45bd-8dc2-4f1ff0e551a7"
   }
 }
-```
+{% endcodetabs %}
 
 ---
 
 ### 查看單一Preprocessing/Training/Optimization Task資訊
-**請求方式**：POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/KlnZtRyqy3rPAZWL
+<g>`POST`</g> `http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/KlnZtRyqy3rPAZWL`
 
-**描述**：此 API 允許驗證成功的用戶根據Task的UID來查看工作狀態。
+此 API 允許驗證成功的用戶根據Task的UID來查看工作狀態。
 
-#### 請求參數
+#### Headers
+| Name | Value | Note |
+| --------- | ---------------- |-|
+| Content-Type | application/json | -|
+
+#### Body
 | 參數      | 必填 | 描述             |備註|
 | --------- | ---- | ---------------- |-|
 | uid| 是| Task的UID| -|
 
 
-#### 範例請求
-
-Example RAW Request
-```json
-POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/KlnZtRyqy3rPAZWL
-Content-Type: application/json
-
+#### 請求範例
+{% codetabs name="Raw Request", type="json" -%}
 {
     "uid":"169920c2-0441-4f47-82b1-41b9c859bf06"
 }
-```
-Example CURL Request
-```bash
+{%- language name="cURL Request", type="bash" -%}
 curl --request POST \
-  --url http://<host_ip>:<backend_entrypoint>/api/v1.1.1/entrypoint/Router/parse/KlnZtRyqy3rPAZWL \
+  --url http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/KlnZtRyqy3rPAZWL \
   --header 'Content-Type: application/json' \
   --data '{
     "uid":"169920c2-0441-4f47-82b1-41b9c859bf06"
 }'
-```
+{% endcodetabs %}
 
-#### 範例回應
+#### 回應範例
 
-**成功回應**：
-Statue Code:200
-
-```json
+{% codetabs name="200", type="json" -%}
 {
   "detail": "Metadata retrieved successfully",
   "data": {
@@ -412,55 +401,50 @@ Statue Code:200
     "f_pipeline_uid": "37e952be-7cd8-463e-b3da-d28c47ed860c"
   }
 }
-```
+{% endcodetabs %}
 
+---
 
 ### 查看Preprocessing/Training/Optimization Task Log
-**請求方式**：POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/bJ7xLmgp4WSWK498
+<g>`POST`</g> `http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/bJ7xLmgp4WSWK498`
 
-**描述**：此 API 允許驗證成功的用戶根據Tsk的UID、工作種類來查看Task Log。
+此 API 允許驗證成功的用戶根據Tsk的UID、工作種類來查看Task Log。
 
-#### 請求參數
+#### Headers
+| Name | Value | Note |
+| --------- | ---------------- |-|
+| Content-Type | application/json | -|
+
+#### Body
 | 參數      | 必填 | 描述             |備註|
 | --------- | ---- | ---------------- |-|
 | task_uid| 是| Task的UID| -|
 |type|是|Task種類|preprocessing/training/retrain|
 
-#### 範例請求
-
-Example RAW Request
-```json
-POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/bJ7xLmgp4WSWK498
-Content-Type: application/json
-
+#### 請求範例
+{% codetabs name="Raw Request", type="json" -%}
 {
     "task_uid":"169920c2-0441-4f47-82b1-41b9c859bf06",
     "type":"preprocessing"
 }
-```
-Example CURL Request
-```bash
+{%- language name="cURL Request", type="bash" -%}
 curl --request POST \
-  --url http://<host_ip>:<backend_entrypoint>/api/v1.1.1/entrypoint/Router/parse/bJ7xLmgp4WSWK498 \
+  --url http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/bJ7xLmgp4WSWK498 \
   --header 'Content-Type: application/json' \
   --data '{
     "task_uid":"169920c2-0441-4f47-82b1-41b9c859bf06",
     "type":"preprocessing"
 }'
-```
+{% endcodetabs %}
 
-#### 範例回應
-
-**成功回應**：
-Statue Code:200
-
-```json
+#### 回應範例
+{% codetabs name="200", type="json" -%}
 {
   "detail": "Get log successfully",
   "data": {
-    "download_original_dataset": "time=\"2024-09-18T10:13:37.256Z\" level=info msg=\"capturing logs\" argo=true\ngreat\nhttp://140.118.122.164:34804/api/v1.1.1/pipeline_operation/GeneralFileManager/download\n<Response [200]>\ntime=\"2024-09-18T10:13:38.258Z\" level=info msg=\"sub-process exited\" argo=true error=\"<nil>\"\ntime=\"2024-09-18T10:13:38.258Z\" level=info msg=\"/tmp/outputs/output/data -> /var/run/argo/outputs/artifacts/tmp/outputs/output/data.tgz\" argo=true\ntime=\"2024-09-18T10:13:38.258Z\" level=info msg=\"Taring /tmp/outputs/output/data\"\ntime=\"2024-09-18T10:13:38.357Z\" level=info msg=\"archived 2 files/dirs in /tmp/outputs/output/data\"\n",
+    "download_original_dataset": "time=\"2024-09-18T10:13:37.256Z\" level=info msg=\"capturing logs\" argo=true\ngreat\nhttp://140.118.122.164:34804/api/{{ book.entrypoint_version }}/pipeline_operation/GeneralFileManager/download\n<Response [200]>\ntime=\"2024-09-18T10:13:38.258Z\" level=info msg=\"sub-process exited\" argo=true error=\"<nil>\"\ntime=\"2024-09-18T10:13:38.258Z\" level=info msg=\"/tmp/outputs/output/data -> /var/run/argo/outputs/artifacts/tmp/outputs/output/data.tgz\" argo=true\ntime=\"2024-09-18T10:13:38.258Z\" level=info msg=\"Taring /tmp/outputs/output/data\"\ntime=\"2024-09-18T10:13:38.357Z\" level=info msg=\"archived 2 files/dirs in /tmp/outputs/output/data\"\n",
     "preprocessing": "time=\"2024-09-18T10:13:47.457Z\" level=info msg=\"capturing logs\" argo=true\ntime=\"2024-09-18T10:14:19.482Z\" level=info msg=\"sub-process exited\" argo=true error=\"<nil>\"\ntime=\"2024-09-18T10:14:19.482Z\" level=info msg=\"/tmp/outputs/output/data -> /var/run/argo/outputs/artifacts/tmp/outputs/output/data.tgz\" argo=true\ntime=\"2024-09-18T10:14:19.482Z\" level=info msg=\"Taring /tmp/outputs/output/data\"\ntime=\"2024-09-18T10:14:19.953Z\" level=info msg=\"archived 2 files/dirs in /tmp/outputs/output/data\"\n",
     "upload_training_dataset": "time=\"2024-09-18T10:14:32.469Z\" level=info msg=\"capturing logs\" argo=true\ngreat\ntime=\"2024-09-18T10:14:33.470Z\" level=info msg=\"sub-process exited\" argo=true error=\"<nil>\"\n"
   }
 }
-```
+{% endcodetabs %}

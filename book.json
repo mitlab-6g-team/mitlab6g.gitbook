@@ -4,7 +4,8 @@
         "chapter-fold",
         "splitter",
         "hide-element",
-        "copy-code-button"
+        "copy-code-button",
+        "codetabs"
     ],
     "pluginsConfig": {
         "hide-element": {
@@ -13,5 +14,16 @@
         "theme-default": {
             "collapseNav": false
         }
+    },
+    "title": "MITLab AIML Platform GitBook",
+    "variables": {
+        "mitlab_host": "140.118.122.246",
+        "dashboard_port" : "40000",
+        "entrypoint_port": "50000",
+        "entrypoint_version": "v1.1.5"
+
+    },
+    "styles": {
+        "website": "styles/website.css"
     }
 }

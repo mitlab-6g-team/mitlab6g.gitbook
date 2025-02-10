@@ -1,11 +1,23 @@
-## Build File管理
+{% raw %}
+<style>
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+</style>
+
+# Build File管理
 
 ### 上傳Preprocessing/Training/Optimization Build File檔案
-**請求方式**：POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/lwO7afcqdKtKEAhb
+<g>`POST`</g> `http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/lwO7afcqdKtKEAhb`
 
-**描述**：此 API 允許驗證成功的用戶根據提供的Build File名稱、描述、序列、 所屬Pipeline的UID、副檔名和Build File檔案file，來新增Build File資訊。
+此 API 允許驗證成功的用戶根據提供的Build File名稱、描述、序列、 所屬Pipeline的UID、副檔名和Build File檔案file，來新增Build File資訊。
 
-#### 請求參數
+#### Headers
+| Name | Value | Note |
+| --------- | ---------------- |-|
+| Content-Type | multipart/form-data | -|
+
+#### Body
 | 參數      | 必填 | 描述             |備註|
 | --------- | ---- | ---------------- |-|
 | name| 是| Build File名稱| -|
@@ -15,13 +27,9 @@
 |extension|是|Build File副檔名|-|
 |file|是|Build File檔案|-|
 
-#### 範例請求
+#### 請求範例
 
-Example RAW Request
-```json
-POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/lwO7afcqdKtKEAhb
-Content-Type: multipart/form-data
-
+{% codetabs name="Raw Request", type="json" -%}
 {
   "name": "rr",
   "description": "rr",
@@ -30,11 +38,9 @@ Content-Type: multipart/form-data
   "extension": "null",
   "file":<file> 
 }
-```
-Example CURL Request
-```bash
+{%- language name="cURL Request", type="bash" -%}
 curl --request POST \
-  --url http://<host_ip>:<backend_entrypoint>/api/v1.1.1/entrypoint/Router/parse/lwO7afcqdKtKEAhb \
+  --url http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/lwO7afcqdKtKEAhb \
   --header 'Content-Type: multipart/form-data' \
   --form name=rr \
   --form description=rr \
@@ -42,14 +48,10 @@ curl --request POST \
   --form f_pipeline_uid=37e952be-7cd8-463e-b3da-d28c47ed860c \
   --form extension=null \
   --form file=@path/to/Dockerfile
-```
+{% endcodetabs %}
 
-#### 範例回應
-
-**成功回應**：
-Statue Code:200
-
-```json
+#### 回應範例
+{% codetabs name="200", type="json" -%}
 {
   "detail": "Metadata created and File uploaded successfully",
   "data": {
@@ -67,50 +69,48 @@ Statue Code:200
     "f_pipeline_uid": "37e952be-7cd8-463e-b3da-d28c47ed860c"
   }
 }
-```
+{% endcodetabs %}
+
+
+---
 
 
 ### 查詢Pipeline底下的Preprocessing/Training/Optimization Build File資訊
-**請求方式**：POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/eu4oNOb8E0KVaOdo
+<g>`POST`</g> `http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/eu4oNOb8E0KVaOdo`
 
-**描述**：此 API 允許驗證成功的用戶根據提供 Preprocessing/Training/Optimization Build File 所屬Pipeline的UID，來查詢所屬Pipeline下的所有Build File資訊。
+此 API 允許驗證成功的用戶根據提供 Preprocessing/Training/Optimization Build File 所屬Pipeline的UID，來查詢所屬Pipeline下的所有Build File資訊。
 
-#### 請求參數
+#### Headers
+| Name | Value | Note |
+| --------- | ---------------- |-|
+| Content-Type | application/json | -|
+
+#### Body
 | 參數      | 必填 | 描述             |備註|
 | --------- | ---- | ---------------- |-|
 | f_pipeline_uid| 是| 所屬Pipeline的UID| -|
 
-#### 範例請求
-
-Example RAW Request
-```json
-POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/eu4oNOb8E0KVaOdo
-Content-Type: application/json
-
+#### 請求範例
+{% codetabs name="Raw Request", type="json" -%}
 {
     "f_pipeline_uid":"37e952be-7cd8-463e-b3da-d28c47ed860c"
 }
-```
-Example CURL Request
-```bash
+{%- language name="cURL Request", type="bash" -%}
 curl --request POST \
-  --url http://<host_ip>:<backend_entrypoint>/api/v1.1.1/entrypoint/Router/parse/eu4oNOb8E0KVaOdo \
+  --url http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/eu4oNOb8E0KVaOdo \
   --header 'Content-Type: application/json' \
   --data '{
     "f_pipeline_uid":"37e952be-7cd8-463e-b3da-d28c47ed860c"
 }'
-```
+{% endcodetabs %}
 
-#### 範例回應
+#### 回應範例
 
-**成功回應**：
-Statue Code:200
-
-```json
+{% codetabs name="200", type="json" -%}
 {
   "detail": "Metadatas retrieved successfully",
   "data": {
-			<List: Download Dockerfiles, Running Dockerfiles and Upload Dockerfiles>
+		<List: Download Dockerfiles, Running Dockerfiles and Upload Dockerfiles>
 	}
 }
-```
+{% endcodetabs %}

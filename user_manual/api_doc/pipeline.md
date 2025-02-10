@@ -1,11 +1,23 @@
-## Pipeline管理
+{% raw %}
+<style>
+r { color: Red }
+o { color: Orange }
+g { color: Green }
+</style>
+
+# Pipeline管理
 
 ### 上傳Preprocessing/Training/Optimization Pipeline檔案
-**請求方式**：POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/FgdSO4ryg2UA2APl
+<g>`POST`</g>  `http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/FgdSO4ryg2UA2APl`
 
-**描述**：此 API 允許驗證成功的用戶根據提供的Pipeline名稱、描述、種類、副檔名、所屬Application的UID和Pipeline檔案，來新增Pipeline檔案及資訊。
+此 API 允許驗證成功的用戶根據提供的Pipeline名稱、描述、種類、副檔名、所屬Application的UID和Pipeline檔案，來新增Pipeline檔案及資訊。
 
-#### 請求參數
+#### Headers
+| Name | Value | Note |
+| --------- | ---------------- |-|
+| Content-Type | multipart/form-data | -|
+
+#### Body
 | 參數      | 必填 | 描述             |備註|
 | --------- | ---- | ---------------- |-|
 | name| 是| Pipeline名稱| -|
@@ -15,13 +27,8 @@
 |extension|是|Pipeline副檔名|zip|
 |file|是|Pipeline檔案|-|
 
-#### 範例請求
-
-Example RAW Request
-```json
-POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/FgdSO4ryg2UA2APl
-Content-Type: multipart/form-data
-
+#### 請求範例
+{% codetabs name="Raw Request", type="json" -%}
 {
   "name": "test pipeline",
   "description": "test pipeline description",
@@ -30,11 +37,9 @@ Content-Type: multipart/form-data
   "extension": "py",
   "file":<file> // only .py file acceptable
 }
-```
-Example CURL Request
-```bash
+{%- language name="cURL Request", type="bash" -%}
 curl --request POST \
-  --url http://<host_ip>:<backend_entrypoint>/api/v1.1.1/entrypoint/Router/parse/FgdSO4ryg2UA2APl \
+  --url http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/FgdSO4ryg2UA2APl \
   --header 'Content-Type: multipart/form-data' \
   --form name=test \
   --form description=mitlab \
@@ -42,14 +47,10 @@ curl --request POST \
   --form f_application_uid=90889d16-0d70-4816-a4d9-f2f9762a934e \
   --form extension=py \
   --form file=@path/to/pipeline.py
-```
+{% endcodetabs %}
 
-#### 範例回應
-
-**成功回應**：
-Statue Code:200
-
-```json
+#### 回應範例
+{% codetabs name="200", type="json" -%}
 {
   "detail": "Metadata created and File uploaded successfully",
   "data": {
@@ -67,50 +68,46 @@ Statue Code:200
     "f_application_uid": "90889d16-0d70-4816-a4d9-f2f9762a934e"
   }
 }
-```
+{% endcodetabs %}
+
+---
 
 
 ### 查詢Application底下的Preprocessing/Training/Optimization Pipeline資訊
-**請求方式**：POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/VytZbpzyI9fFWkM6
+<g>`POST`</g>  `http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/VytZbpzyI9fFWkM6`
 
-**描述**：此 API 允許驗證成功的用戶根據提供 Preprocessing/Training/Optimization Pipeline 所屬Application的UID，來查詢所屬Application下的所有Pipeline資訊。
+此 API 允許驗證成功的用戶根據提供 Preprocessing/Training/Optimization Pipeline 所屬Application的UID，來查詢所屬Application下的所有Pipeline資訊。
 
-#### 請求參數
+#### Headers
+| Name | Value | Note |
+| --------- | ---------------- |-|
+| Content-Type | application/json | -|
+
+#### Body
 | 參數      | 必填 | 描述             |備註|
 | --------- | ---- | ---------------- |-|
 | f_application_uid| 是| 所屬Application的UID| -|
 
-#### 範例請求
-
-Example RAW Request
-```json
-POST http://<host_ip>:<backend_entrypoint>/api/<backend_entrypoint>/entrypoint/Router/parse/VytZbpzyI9fFWkM6
-Content-Type: application/json
-
+#### 請求範例
+{% codetabs name="Raw Request", type="json" -%}
 {
     "f_application_uid":"90889d16-0d70-4816-a4d9-f2f9762a934e"
 }
-```
-Example CURL Request
-```bash
+{%- language name="cURL Request", type="bash" -%}
 curl --request POST \
-  --url http://<host_ip>:<backend_entrypoint>/api/v1.1.1/entrypoint/Router/parse/VytZbpzyI9fFWkM6 \
+  --url http://{{ book.mitlab_host }}:{{ book.entrypoint_port }}/api/{{ book.entrypoint_version }}/entrypoint/Router/parse/VytZbpzyI9fFWkM6 \
   --header 'Content-Type: application/json' \
   --data '{
     "f_application_uid":"90889d16-0d70-4816-a4d9-f2f9762a934e"
 }'
-```
+{% endcodetabs %}
 
-#### 範例回應
-
-**成功回應**：
-Statue Code:200
-
-```json
+#### 回應範例
+{% codetabs name="200", type="json" -%}
 {
   "detail": "Metadatas retrieved successfully",
   "data": {
-			<List: Preprocessing Pipelines, Training Pipelines and Retrain Pipelines>
+		<List: Preprocessing Pipelines, Training Pipelines and Retrain Pipelines>
 	}
 }
-```
+{% endcodetabs %}

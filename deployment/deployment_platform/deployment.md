@@ -1,5 +1,5 @@
 # Deployment Platform部屬
-此指南幫助使用者設置部屬平台。請從我們的GitHub儲存庫獲取安裝程式！
+此指南幫助使用者設置推論系統的部屬平台。請從我們的GitHub儲存庫獲取安裝程式！
 
 ## 系統需求
 
@@ -43,19 +43,19 @@ git clone https://github.com/mitlab-6g-team/mitlab_deployment_platform.git
 - .env.pgadmin_config
     - 可選更動
 
-## 系統版本
-| 系統名稱 | 系統版本 | 是否有固定port |
-| --- | --- | --- |
-| AGENT_OPERATION | v1.1.5 | 34806 |
-| METADATA_MGT | v1.1.1 | - |
-| FILE_MGT | v1.1.1 | - |
-| CENTRAL_CONNECTOR | v1.1.1 | - |
-| INFERENCE_CONNECTOR | v1.1.1 | - |
-| AUTHENTICATE_MIDDLEWARE | v1.1.1 | - |
-| AGENT_USER_DASHBOARD | v1.1.2 | - |
-| SYSTEM_TASK_MGT | v1.1.1 | 30303 |
-| INFERENCE_TASK_MGT | v1.1.1 | 不需要 |
-| DATAFLOW_MGT | v1.1.0 | 30308 |
+## 連接埠說明
+| 系統名稱 | 是否有固定port |
+| --- | --- |
+| AGENT_OPERATION | 34806 |
+| METADATA_MGT | - |
+| FILE_MGT | - |
+| CENTRAL_CONNECTOR | - |
+| INFERENCE_CONNECTOR | - |
+| AUTHENTICATE_MIDDLEWARE | - |
+| AGENT_USER_DASHBOARD | - |
+| SYSTEM_TASK_MGT | 30303 |
+| INFERENCE_TASK_MGT | 不需填寫（動態路由） |
+| DATAFLOW_MGT | 30308 |
 
 ## 開始安裝
 ```bash
@@ -65,15 +65,15 @@ bash ./install_all.sh
 
 ## 激活 mitlab_deployment_server
 - 填入所需資訊
-    - 從 mitlab_deployment_server 資料夾內**的** .env.common.sample 取得
+    - 從 mitlab_deployment_server 資料夾內的 ``.env.common.sample`` 取得
         - DEPLOYMENT_PF_HOST_IP
         - CENTRAL_CONNECTOR_CONTAINER_PORT
-- 從 training platform 取得資訊
-    - AGENT_UID
-    - AGENT_ACTIVATION_TOKEN
+    - 從 AI/ML Intelligent Platform 的Agent頁面取得資訊
+        - AGENT_UID
+        - AGENT_ACTIVATION_TOKEN
 - 實際激活
 ```bash
-curl --location 'http://<DEPLOYMENT_PF_HOST_IP>:<CENTRAL_CONNECTOR_CONTAINER_PORT>/api/v1.1.1/central_operation/AgentLifeManager/init' \
+curl --location 'http://<DEPLOYMENT_PF_HOST_IP>:<CENTRAL_CONNECTOR_CONTAINER_PORT>/api/v1.1.2/central_operation/AgentLifeManager/init' \
 --header 'Content-Type: application/json' \
 --data '{
 	"agent_uid": "<AGENT_UID>",

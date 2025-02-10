@@ -1,9 +1,9 @@
-# Pipeline 專用 Image 範例
+# Optimization Pipeline 專用 Image 範例
 
 在 Kubeflow Pipelines 中，每個 Pipeline 函數都對應到一個獨立的容器化環境，這些環境由 Docker Image 提供支持。通常情況下，所需的 Image 可以歸類為以下四種，分別針對不同的處理需求進行設計。
 
 ---
-## 1. 原始數據下載 Image（Download Original Dataset Image）
+## 1. 原始數據下載 Image（Download Dataset Image）
 
 ```dockerfile
 FROM python:3.8.10
