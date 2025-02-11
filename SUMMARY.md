@@ -42,7 +42,7 @@
     * [Model管理](./user_manual/api_doc/model.md)
       * [下載Model檔案](./user_manual/api_doc/model.md#下載model檔案)
       * [查看所屬Application的Model資訊](./user_manual/api_doc/model.md#查看所屬application的model資訊)
-  * [Pipeline範例](./user_manual/preprocessing_pipeline_template.md)
+  * Pipeline範例
     * [Preprocessing Pipeline](./user_manual/preprocessing_pipeline_template.md)
       * [流程概述](./user_manual/preprocessing_pipeline_template.md#preprocessing-pipeline-流程概述)
       * [程式碼範例](./user_manual/preprocessing_pipeline_template.md#preprocessing-pipeline-程式碼)
@@ -55,7 +55,7 @@
       * [流程概述](./user_manual/optimization_pipeline_template.md#optimization-pipeline-流程概述)
       * [程式碼範例](./user_manual/optimization_pipeline_template.md#optimization-pipeline-程式碼)
       * [程式碼結構說明](./user_manual/optimization_pipeline_template.md#optimization-pipeline-程式碼結構說明)
-  * [BuildFile 範例](./user_manual/build_file_example/preprocessing_image_template.md#Preprocessing-Pipeline-專用-Image-範例)
+  * BuildFile 範例
     * [Preprocessing Pipeline BuildFile 範例](./user_manual/build_file_example/preprocessing_image_template.md#Preprocessing-Pipeline-專用-Image-範例)
     * [Training Pipeline BuildFile 範例](./user_manual/build_file_example/training_image_template.md#Training-Pipeline-專用-Image-範例)
     * [Optimization Pipeline BuildFile 範例](./user_manual/build_file_example/optimization_image_template.md#Optimization-Pipeline-專用-Image-範例)
