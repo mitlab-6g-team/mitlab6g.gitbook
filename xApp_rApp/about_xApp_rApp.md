@@ -49,7 +49,7 @@
     
     ```bash
     curl --request POST \
-      --url http://<host_ip>:<backend_entrypoint>/api/inference_exe/InferenceServiceHandler/get_inference_result \
+      --url http://<host_ip>:8000/inference-service-<position_uid> \
       --header 'Content-Type: application/json' \
       --data '{
       "value": "any_type_of_raw_data"
