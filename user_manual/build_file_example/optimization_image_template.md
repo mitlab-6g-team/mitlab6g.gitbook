@@ -7,7 +7,7 @@
 
 ```dockerfile
 FROM python:3.8.10
-RUN pip install --no-cache-dir git+https://github.com/mitlab-6g-team/mitlab-aiml-tools.git@v1.1.1
+RUN pip install --no-cache-dir git+https://github.com/mitlab-6g-team/mitlab-aiml-tools.git
 ```
 ### 用途
 * 為 Pipeline 的第一步（數據下載） 提供執行環境。
@@ -20,7 +20,7 @@ RUN pip install --no-cache-dir git+https://github.com/mitlab-6g-team/mitlab-aiml
 FROM python:3.8.10
 RUN pip install --no-cache-dir numpy
 RUN pip install --no-cache-dir pandas
-RUN pip install --no-cache-dir git+https://github.com/mitlab-6g-team/mitlab-aiml-tools.git@v1.1.1
+RUN pip install --no-cache-dir git+https://github.com/mitlab-6g-team/mitlab-aiml-tools.git
 ```
 ### 用途
 * 為 Pipeline 的第二步（數據預處理） 提供執行環境。
@@ -32,7 +32,7 @@ RUN pip install --no-cache-dir git+https://github.com/mitlab-6g-team/mitlab-aiml
 ```dockerfile
 FROM tensorflow/tensorflow:2.15.0-gpu
 RUN apt-get update && apt-get install -y git
-RUN pip install --no-cache-dir git+https://github.com/mitlab-6g-team/mitlab-aiml-tools.git@v1.1.1
+RUN pip install --no-cache-dir git+https://github.com/mitlab-6g-team/mitlab-aiml-tools.git
 RUN pip install --no-cache-dir scikit-learn
 ```
 ### 用途
@@ -46,7 +46,7 @@ RUN pip install --no-cache-dir scikit-learn
 
 ```dockerfile
 FROM python:3.8.10
-RUN pip install --no-cache-dir git+https://github.com/mitlab-6g-team/mitlab-aiml-tools.git@v1.1.1
+RUN pip install --no-cache-dir git+https://github.com/mitlab-6g-team/mitlab-aiml-tools.git
 ```
 ### 用途
 * 適用於 Pipeline 的第三步（數據上傳）。
