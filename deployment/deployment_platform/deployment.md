@@ -46,7 +46,7 @@ git clone https://github.com/mitlab-6g-team/mitlab_deployment_platform.git
 ## 連接埠說明
 | 系統名稱 | 是否有固定port |
 | --- | --- |
-| AGENT_OPERATION | 34806 |
+| AGENT_OPERATION | 36904 |
 | METADATA_MGT | - |
 | FILE_MGT | - |
 | CENTRAL_CONNECTOR | - |
