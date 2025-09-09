@@ -7,7 +7,7 @@ on:
       - main
 
 permissions:
-  contents: write 
+  contents: write
 
 jobs:
   gitbook:
@@ -15,15 +15,15 @@ jobs:
 
     steps:
       - name: Checkout main
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: main
 
-      - name: build image for gitbook instruction
+      - name: Build image for gitbook instruction
         run: |
           docker build . -t gitbook-server:latest
-      
-      - name: create container volume folder
+
+      - name: Prepare gitbook volume
         run: |
           mkdir -p gitbook
           mv SUMMARY.md gitbook/SUMMARY.md
@@ -31,24 +31,42 @@ jobs:
           mv book.json gitbook/book.json
           bash mv_folder.sh
 
-      - name: install gitbook-plugins
+      # 用 runner 的 UID/GID 執行，避免 root 擁有權
+      - name: Install gitbook plugins
         run: |
-          docker run --rm -v "$PWD/gitbook:/gitbook" gitbook-server gitbook install
+          docker run --rm \
+            --user "$(id -u):$(id -g)" \
+            -v "$PWD/gitbook:/gitbook" \
+            -w /gitbook \
+            -e HOME=/gitbook \
+            gitbook-server gitbook install
 
-      - name: compile books
+      - name: Build books
         run: |
-          docker run --rm -v "$PWD/gitbook:/gitbook" gitbook-server gitbook build
+          docker run --rm \
+            --user "$(id -u):$(id -g)" \
+            -v "$PWD/gitbook:/gitbook" \
+            -w /gitbook \
+            -e HOME=/gitbook \
+            gitbook-server gitbook build
 
-      - name: push _book to branch gitbook_source
+
+      # 推送 _book 到 gitbook_source 分支
+      - name: Push _book to branch gitbook_source
         env:
           MYEMAIL: talon6605@gmail.com
           MYNAME: Fail-Man
         run: |
           cd gitbook/_book
+          # 確保沒有殘留 .git 造成衝突
+          rm -rf .git
+
           git config --global user.email "${MYEMAIL}"
           git config --global user.name "${MYNAME}"
           git init
           git add .
-          git commit -m "Updated By Github Actions With Build ${{ github.run_number }} of ${{ github.workflow }} For Github Pages"
+          git commit -m "Updated by GitHub Actions with build ${{ github.run_number }} of ${{ github.workflow }} for GitHub Pages"
           git branch -M main
-          git push --force --quiet "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" main:gitbook_source
+          git push --force --quiet \
+            "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" \
+            main:gitbook_source
