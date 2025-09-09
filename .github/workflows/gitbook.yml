@@ -6,6 +6,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write 
+
 jobs:
   gitbook:
     runs-on: ubuntu-latest
@@ -38,18 +41,14 @@ jobs:
 
       - name: push _book to branch gitbook_source
         env:
-          TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
-          REF: github.com/${{github.repository}}
           MYEMAIL: talon6605@gmail.com
           MYNAME: Fail-Man
         run: |
-          cd gitbook
-          sudo chmod 777 -R _book
-          cd _book
+          cd gitbook/_book
           git config --global user.email "${MYEMAIL}"
           git config --global user.name "${MYNAME}"
           git init
-          git add . 
-          git commit -m "Updated By Github Actions With Build ${{github.run_number}} of ${{github.workflow}} For Github Pages"
+          git add .
+          git commit -m "Updated By Github Actions With Build ${{ github.run_number }} of ${{ github.workflow }} For Github Pages"
           git branch -M main
-          git push --force --quiet "https://${TOKEN}@${REF}" main:gitbook_source
+          git push --force --quiet "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" main:gitbook_source
