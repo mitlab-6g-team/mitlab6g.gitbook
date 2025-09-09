@@ -1,0 +1,2898 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Preprocessing · MITLab AIML Platform GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-codetabs/codetabs.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../project_dataset.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">簡介</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    MITLab AI/ML Platform 介紹
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../introduce/abstract_class_hierarchy.html">
+            
+                <a href="../../introduce/abstract_class_hierarchy.html">
+            
+                    
+                    平台名詞階層說明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../architecture/architecture.html">
+            
+                <a href="../../architecture/architecture.html">
+            
+                    
+                    平台架構
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../architecture/architecture.html">
+            
+                <a href="../../architecture/architecture.html#平台整體架構圖">
+            
+                    
+                    整體架構圖
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../architecture/architecture.html">
+            
+                <a href="../../architecture/architecture.html#aiml-intelligent-platform">
+            
+                    
+                    AI/ML Intelligent Plafrom
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../architecture/architecture.html">
+            
+                <a href="../../architecture/architecture.html#部屬平台-deployment-platform">
+            
+                    
+                    Deployment Platform
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../architecture/architecture.html">
+            
+                <a href="../../architecture/architecture.html#邊緣伺服器-edge-server">
+            
+                    
+                    Edge Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">部署</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../../deployment/deployment_platform/deployment.html">
+            
+                <a href="../../deployment/deployment_platform/deployment.html">
+            
+                    
+                    Deployment Platform
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../../deployment/edge_server/deployment.html">
+            
+                <a href="../../deployment/edge_server/deployment.html">
+            
+                    
+                    Edge Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">使用手冊</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" >
+            
+                <span>
+            
+                    
+                    AI/ML Intelligent Platform
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../api_doc/api_server.html">
+            
+                <a href="../api_doc/api_server.html">
+            
+                    
+                    API文件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.1" data-path="../api_doc/dataset.html">
+            
+                <a href="../api_doc/dataset.html">
+            
+                    
+                    Dataset管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.1.1" data-path="../api_doc/dataset.html">
+            
+                <a href="../api_doc/dataset.html#上傳訓練用的originaltraining-dataset檔案">
+            
+                    
+                    上傳訓練用的Original/Training Dataset檔案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.1.2" data-path="../api_doc/dataset.html">
+            
+                <a href="../api_doc/dataset.html#上傳優化用的originaloptimization-dataset檔案">
+            
+                    
+                    上傳優化用的Original/Optimization Dataset檔案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.1.3" data-path="../api_doc/dataset.html">
+            
+                <a href="../api_doc/dataset.html#查詢project底下訓練用的orignaltraining-dataset資訊">
+            
+                    
+                    查詢Project底下訓練用的Original/Training Dataset資訊
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.1.4" data-path="../api_doc/dataset.html">
+            
+                <a href="../api_doc/dataset.html#查詢application底下優化用的originaloptimization-dataset資訊">
+            
+                    
+                    查詢Application底下優化用的Original/Optimization Dataset資訊
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.2" data-path="../api_doc/pipeline.html">
+            
+                <a href="../api_doc/pipeline.html">
+            
+                    
+                    Pipeline管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.2.1" data-path="../api_doc/pipeline.html">
+            
+                <a href="../api_doc/pipeline.html#上傳preprocessingtrainingoptimization-pipeline檔案">
+            
+                    
+                    上傳Preprocessing/Training/Optimization Pipeline檔案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.2.2" data-path="../api_doc/pipeline.html">
+            
+                <a href="../api_doc/pipeline.html#查詢application底下的preprocessingtrainingoptimization-pipeline資訊">
+            
+                    
+                    查詢Application底下的Preprocessing/Training/Optimization Pipeline資訊
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.3" data-path="../api_doc/build_file.html">
+            
+                <a href="../api_doc/build_file.html">
+            
+                    
+                    Build File管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.3.1" data-path="../api_doc/build_file.html">
+            
+                <a href="../api_doc/build_file.html#上傳preprocessingtrainingoptimization-build-file檔案">
+            
+                    
+                    上傳Preprocessing/Training/Optimization Build File檔案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.3.2" data-path="../api_doc/build_file.html">
+            
+                <a href="../api_doc/build_file.html#查詢pipeline底下的preprocessingtrainingoptimization-build-file資訊">
+            
+                    
+                    查詢Pipeline底下的Preprocessing/Training/Optimization Build File資訊
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.4" data-path="../api_doc/config.html">
+            
+                <a href="../api_doc/config.html">
+            
+                    
+                    Config管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.4.1" data-path="../api_doc/config.html">
+            
+                <a href="../api_doc/config.html#新增preprocessingtrainingoptimization-config資訊">
+            
+                    
+                    新增Preprocessing/Training/Optimization Config資訊
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.4.2" data-path="../api_doc/config.html">
+            
+                <a href="../api_doc/config.html#查詢pipeline底下的preprocessingtrainingoptimization-config資訊">
+            
+                    
+                    查詢Pipeline底下的Preprocessing/Training/Optimization Config資訊
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.5" data-path="../api_doc/run_pipeline.html">
+            
+                <a href="../api_doc/run_pipeline.html">
+            
+                    
+                    Pipeline運行
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.5.1" data-path="../api_doc/run_pipeline.html">
+            
+                <a href="../api_doc/run_pipeline.html#運行preprocessing-task">
+            
+                    
+                    運行Preprocessing Task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.5.2" data-path="../api_doc/run_pipeline.html">
+            
+                <a href="../api_doc/run_pipeline.html#運行training-task">
+            
+                    
+                    運行Training Task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.5.3" data-path="../api_doc/run_pipeline.html">
+            
+                <a href="../api_doc/run_pipeline.html#運行optimization-task">
+            
+                    
+                    運行Optimization Task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.5.4" data-path="../api_doc/run_pipeline.html">
+            
+                <a href="../api_doc/run_pipeline.html#查看單一preprocessingtrainingoptimization-task資訊">
+            
+                    
+                    查看單一Preprocessing/Training/Optimization Task資訊
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.5.5" data-path="../api_doc/run_pipeline.html">
+            
+                <a href="../api_doc/run_pipeline.html#查看preprocessingtrainingoptimization-task-log">
+            
+                    
+                    查看Preprocessing/Training/Optimization Task Log
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.6" data-path="../api_doc/model.html">
+            
+                <a href="../api_doc/model.html">
+            
+                    
+                    Model管理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1.6.1" data-path="../api_doc/model.html">
+            
+                <a href="../api_doc/model.html#下載model檔案">
+            
+                    
+                    下載Model檔案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.1.6.2" data-path="../api_doc/model.html">
+            
+                <a href="../api_doc/model.html#查看所屬application的model資訊">
+            
+                    
+                    查看所屬Application的Model資訊
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2" >
+            
+                <span>
+            
+                    
+                    Pipeline範例
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.1" data-path="../preprocessing_pipeline_template.html">
+            
+                <a href="../preprocessing_pipeline_template.html">
+            
+                    
+                    Preprocessing Pipeline
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.1.1" data-path="../preprocessing_pipeline_template.html">
+            
+                <a href="../preprocessing_pipeline_template.html#preprocessing-pipeline-流程概述">
+            
+                    
+                    流程概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.1.2" data-path="../preprocessing_pipeline_template.html">
+            
+                <a href="../preprocessing_pipeline_template.html#preprocessing-pipeline-程式碼">
+            
+                    
+                    程式碼範例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.1.3" data-path="../preprocessing_pipeline_template.html">
+            
+                <a href="../preprocessing_pipeline_template.html#preprocessing-pipeline-程式碼結構說明">
+            
+                    
+                    程式碼結構說明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.2" data-path="../training_pipeline_template.html">
+            
+                <a href="../training_pipeline_template.html">
+            
+                    
+                    Training Pipeline
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.2.1" data-path="../training_pipeline_template.html">
+            
+                <a href="../training_pipeline_template.html#training-pipeline-流程概述">
+            
+                    
+                    流程概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.2.2" data-path="../training_pipeline_template.html">
+            
+                <a href="../training_pipeline_template.html#training-pipeline-程式碼">
+            
+                    
+                    程式碼範例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.2.3" data-path="../training_pipeline_template.html">
+            
+                <a href="../training_pipeline_template.html#training-pipeline-程式碼結構說明">
+            
+                    
+                    程式碼結構說明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.3" data-path="../optimization_pipeline_template.html">
+            
+                <a href="../optimization_pipeline_template.html">
+            
+                    
+                    Optimization Pipeline
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.2.3.1" data-path="../optimization_pipeline_template.html">
+            
+                <a href="../optimization_pipeline_template.html#optimization-pipeline-流程概述">
+            
+                    
+                    流程概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.3.2" data-path="../optimization_pipeline_template.html">
+            
+                <a href="../optimization_pipeline_template.html#optimization-pipeline-程式碼">
+            
+                    
+                    程式碼範例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.2.3.3" data-path="../optimization_pipeline_template.html">
+            
+                <a href="../optimization_pipeline_template.html#optimization-pipeline-程式碼結構說明">
+            
+                    
+                    程式碼結構說明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3" >
+            
+                <span>
+            
+                    
+                    BuildFile 範例
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.3.1" data-path="../build_file_example/preprocessing_image_template.html">
+            
+                <a href="../build_file_example/preprocessing_image_template.html#Preprocessing-Pipeline-專用-Image-範例">
+            
+                    
+                    Preprocessing Pipeline BuildFile 範例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3.2" data-path="../build_file_example/training_image_template.html">
+            
+                <a href="../build_file_example/training_image_template.html#Training-Pipeline-專用-Image-範例">
+            
+                    
+                    Training Pipeline BuildFile 範例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.3.3" data-path="../build_file_example/optimization_image_template.html">
+            
+                <a href="../build_file_example/optimization_image_template.html#Optimization-Pipeline-專用-Image-範例">
+            
+                    
+                    Optimization Pipeline BuildFile 範例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4" data-path="../inference.html">
+            
+                <a href="../inference.html">
+            
+                    
+                    Inference Template範例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.4.1" data-path="../inference.html">
+            
+                <a href="../inference.html#我可以在哪裡獲取範本？">
+            
+                    
+                    我可以在哪裡獲取範本？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.2" data-path="../inference.html">
+            
+                <a href="../inference.html#如何實作推論功能？">
+            
+                    
+                    如何實作推論功能？
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.4.3" data-path="../inference.html">
+            
+                <a href="../inference.html#如何使用推論服務？">
+            
+                    
+                    如何使用推論服務？
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5" data-path="../sdk.html">
+            
+                <a href="../sdk.html">
+            
+                    
+                    Pipeline SDK範例
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.5.1" data-path="../sdk.html">
+            
+                <a href="../sdk.html#1compress">
+            
+                    
+                    Compress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5.2" data-path="../sdk.html">
+            
+                <a href="../sdk.html#2-decompress">
+            
+                    
+                    Decompress
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5.3" data-path="../sdk.html">
+            
+                <a href="../sdk.html#3file-access-authentication-required">
+            
+                    
+                    File Access
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.5.4" data-path="../sdk.html">
+            
+                <a href="../sdk.html#4model-metric-authentication-required">
+            
+                    
+                    Model Metric
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6" >
+            
+                <span>
+            
+                    
+                    前端頁面教學
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.1" data-path="../project.html">
+            
+                <a href="../project.html">
+            
+                    
+                    Project
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.1.1" data-path="../project.html">
+            
+                <a href="../project.html#新增project">
+            
+                    
+                    新增Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.1.2" data-path="../project.html">
+            
+                <a href="../project.html#更新project">
+            
+                    
+                    更新Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.1.3" data-path="../project.html">
+            
+                <a href="../project.html#刪除projct">
+            
+                    
+                    刪除Project
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.2" data-path="../application.html">
+            
+                <a href="../application.html">
+            
+                    
+                    Application
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.2.1" data-path="../application.html">
+            
+                <a href="../application.html#查看所有application">
+            
+                    
+                    查看所有Application
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.2.2" data-path="../application.html">
+            
+                <a href="../application.html#新增application">
+            
+                    
+                    新增Application
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.2.3" data-path="../application.html">
+            
+                <a href="../application.html#更新application">
+            
+                    
+                    更新Application
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.2.4" data-path="../application.html">
+            
+                <a href="../application.html#刪除application">
+            
+                    
+                    刪除Application
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.2.5" data-path="../application.html">
+            
+                <a href="../application.html#發布application給代理端">
+            
+                    
+                    發布Application給代理端
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.3" data-path="../agent.html">
+            
+                <a href="../agent.html">
+            
+                    
+                    Agent
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.3.1" data-path="../agent.html">
+            
+                <a href="../agent.html#查看所有agent">
+            
+                    
+                    查看所有Agent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.3.2" data-path="../agent.html">
+            
+                <a href="../agent.html#新增agent">
+            
+                    
+                    新增Agent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.3.3" data-path="../agent.html">
+            
+                <a href="../agent.html#更新agent">
+            
+                    
+                    更新Agent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.3.4" data-path="../agent.html">
+            
+                <a href="../agent.html#刪除agent">
+            
+                    
+                    刪除Agent
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.4" data-path="../model.html">
+            
+                <a href="../model.html">
+            
+                    
+                    Model
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.4.1" data-path="../model.html">
+            
+                <a href="../model.html#查看所有model">
+            
+                    
+                    查看所有Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.4.2" data-path="../model.html">
+            
+                <a href="../model.html#新增model">
+            
+                    
+                    新增Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.4.3" data-path="../model.html">
+            
+                <a href="../model.html#更新model">
+            
+                    
+                    更新Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.4.4" data-path="../model.html">
+            
+                <a href="../model.html#下載model">
+            
+                    
+                    下載Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.4.5" data-path="../model.html">
+            
+                <a href="../model.html#發佈取消發佈model">
+            
+                    
+                    發佈/取消發佈Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.4.6" data-path="../model.html">
+            
+                <a href="../model.html#刪除model">
+            
+                    
+                    刪除Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.5" data-path="../project_dataset.html">
+            
+                <a href="../project_dataset.html">
+            
+                    
+                    Project Dataset
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.5.1" data-path="../project_dataset.html">
+            
+                <a href="../project_dataset.html#查看所有project-dataset">
+            
+                    
+                    查看所有Project Dataset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.5.2" data-path="../project_dataset.html">
+            
+                <a href="../project_dataset.html#新增project-dataset">
+            
+                    
+                    新增Project Dataset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.5.3" data-path="../project_dataset.html">
+            
+                <a href="../project_dataset.html#更新originaltraining-dataset">
+            
+                    
+                    更新Project Dataset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.5.4" data-path="../project_dataset.html">
+            
+                <a href="../project_dataset.html#下載originaltraining-dataset">
+            
+                    
+                    下載Project Dataset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.5.5" data-path="../project_dataset.html">
+            
+                <a href="../project_dataset.html#搜尋originaltraining-dataset">
+            
+                    
+                    搜尋Project Dataset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.5.6" data-path="../project_dataset.html">
+            
+                <a href="../project_dataset.html#刪除originaltraining-dataset">
+            
+                    
+                    刪除Project Dataset
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.1.6.6" data-path="pipeline.html">
+            
+                <a href="pipeline.html">
+            
+                    
+                    Preprocessing
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.6.1" >
+            
+                <span>
+            
+                    
+                    Preprocessing Pipeline
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.6.1.1" data-path="pipeline.html">
+            
+                <a href="pipeline.html#查看所有preprocessing-pipeline">
+            
+                    
+                    查看所有Preprocessing Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.1.2" data-path="pipeline.html">
+            
+                <a href="pipeline.html#新增preprocessing-pipeline">
+            
+                    
+                    新增Preprocessing Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.1.3" data-path="pipeline.html">
+            
+                <a href="pipeline.html#更新preprocessing-pipeline">
+            
+                    
+                    更新Preprocessing Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.1.4" data-path="pipeline.html">
+            
+                <a href="pipeline.html#下載preprocessing-pipeline">
+            
+                    
+                    下載Preprocessing Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.1.5" data-path="pipeline.html">
+            
+                <a href="pipeline.html#刪除preprocessing-pipeline">
+            
+                    
+                    刪除Preprocessing Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.2" data-path="config.html">
+            
+                <a href="config.html">
+            
+                    
+                    Preprocesing Config
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.6.2.1" data-path="config.html">
+            
+                <a href="config.html#查看所有preprocessing-config">
+            
+                    
+                    查看所有Preprocessing Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.2.2" data-path="config.html">
+            
+                <a href="config.html#新增preprocessing-config">
+            
+                    
+                    新增Preprocessing Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.2.3" data-path="config.html">
+            
+                <a href="config.html#更新preprocessing-config">
+            
+                    
+                    更新Preprocessing Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.2.4" data-path="config.html">
+            
+                <a href="config.html#刪除preprocessing-config">
+            
+                    
+                    刪除Preprocessing Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.3" data-path="image.html">
+            
+                <a href="image.html">
+            
+                    
+                    Preprocessing Image
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.6.3.1" data-path="image.html">
+            
+                <a href="image.html#查看所有preprocessing-image">
+            
+                    
+                    查看所有Preprocessing Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.3.2" data-path="image.html">
+            
+                <a href="image.html#新增preprocessing-image">
+            
+                    
+                    新增Preprocessing Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.3.3" data-path="image.html">
+            
+                <a href="image.html#更新preprocessing-image">
+            
+                    
+                    更新Preprocessing Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.3.4" data-path="image.html">
+            
+                <a href="image.html#下載preprocessing-image">
+            
+                    
+                    下載Preprocessing Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.3.5" data-path="image.html">
+            
+                <a href="image.html#刪除preprocessing-image">
+            
+                    
+                    刪除Preprocessing Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.4" data-path="task.html">
+            
+                <a href="task.html">
+            
+                    
+                    Preprocessing Task
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.6.4.1" data-path="task.html">
+            
+                <a href="task.html#查看所有preprocessing-task">
+            
+                    
+                    查看所有Preprocessing Task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.4.2" data-path="task.html">
+            
+                <a href="task.html#新增preprocessing-task">
+            
+                    
+                    新增Preprocessing Task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.4.3" data-path="task.html">
+            
+                <a href="task.html#更新preprocessing-task">
+            
+                    
+                    更新Preprocessing Task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.4.4" data-path="task.html">
+            
+                <a href="task.html#下載preprocessing-task-log">
+            
+                    
+                    下載Preprocessing Task Log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.6.4.5" data-path="task.html">
+            
+                <a href="task.html#刪除preprocessing-task">
+            
+                    
+                    刪除Preprocessing Task
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7" data-path="../training/pipeline.html">
+            
+                <a href="../training/pipeline.html">
+            
+                    
+                    Training
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.7.1" >
+            
+                <span>
+            
+                    
+                    Training Pipeline
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.7.1.1" data-path="../training/pipeline.html">
+            
+                <a href="../training/pipeline.html#查看所有training-pipeline">
+            
+                    
+                    查看所有Training Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.1.2" data-path="../training/pipeline.html">
+            
+                <a href="../training/pipeline.html#新增training-pipeline">
+            
+                    
+                    新增Training Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.1.3" data-path="../training/pipeline.html">
+            
+                <a href="../training/pipeline.html#更新training-pipeline">
+            
+                    
+                    更新Training Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.1.4" data-path="../training/pipeline.html">
+            
+                <a href="../training/pipeline.html#下載training-pipeline">
+            
+                    
+                    下載Training Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.1.5" data-path="../training/pipeline.html">
+            
+                <a href="../training/pipeline.html#刪除training-pipeline">
+            
+                    
+                    刪除Training Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.2" data-path="../training/config.html">
+            
+                <a href="../training/config.html">
+            
+                    
+                    Training Config
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.7.2.1" data-path="../training/config.html">
+            
+                <a href="../training/config.html#查看所有training-config">
+            
+                    
+                    查看所有Training Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.2.2" data-path="../training/config.html">
+            
+                <a href="../training/config.html#新增training-config">
+            
+                    
+                    新增Training Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.2.3" data-path="../training/config.html">
+            
+                <a href="../training/config.html#更新training-config">
+            
+                    
+                    更新Training Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.2.4" data-path="../training/config.html">
+            
+                <a href="../training/config.html#刪除training-config">
+            
+                    
+                    刪除Training Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.3" data-path="../training/image.html">
+            
+                <a href="../training/image.html">
+            
+                    
+                    Training Image
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.7.3.1" data-path="../training/image.html">
+            
+                <a href="../training/image.html#查看所有training-image">
+            
+                    
+                    查看所有Training Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.3.2" data-path="../training/image.html">
+            
+                <a href="../training/image.html#新增training-image">
+            
+                    
+                    新增Training Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.3.3" data-path="../training/image.html">
+            
+                <a href="../training/image.html#更新training-image">
+            
+                    
+                    更新Training Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.3.4" data-path="../training/image.html">
+            
+                <a href="../training/image.html#下載training-image">
+            
+                    
+                    下載Training Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.3.5" data-path="../training/image.html">
+            
+                <a href="../training/image.html#刪除training-image">
+            
+                    
+                    刪除Training Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.4" data-path="../training/task.html">
+            
+                <a href="../training/task.html">
+            
+                    
+                    Training Task
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.7.4.1" data-path="../training/task.html">
+            
+                <a href="../training/task.html#查看所有training-task">
+            
+                    
+                    查看所有Training Task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.4.2" data-path="../training/task.html">
+            
+                <a href="../training/task.html#新增training-task">
+            
+                    
+                    新增Training Task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.4.3" data-path="../training/task.html">
+            
+                <a href="../training/task.html#更新training-task">
+            
+                    
+                    更新Training Task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.4.4" data-path="../training/task.html">
+            
+                <a href="../training/task.html#下載training-task-log">
+            
+                    
+                    下載Training Task Log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.7.4.5" data-path="../training/task.html">
+            
+                <a href="../training/task.html#刪除training-task">
+            
+                    
+                    刪除Training Task
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.8" data-path="../application_dataset.html">
+            
+                <a href="../application_dataset.html">
+            
+                    
+                    Optimization Dataset
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.8.1" data-path="../application_dataset.html">
+            
+                <a href="../application_dataset.html#查看所有optimization-dataset">
+            
+                    
+                    查看所有Optimization Dataset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.8.2" data-path="../application_dataset.html">
+            
+                <a href="../application_dataset.html#新增optimization-dataset">
+            
+                    
+                    新增Optimization Dataset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.8.3" data-path="../application_dataset.html">
+            
+                <a href="../application_dataset.html#更新originaloptimization-dataset">
+            
+                    
+                    更新Optimization Dataset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.8.4" data-path="../application_dataset.html">
+            
+                <a href="../application_dataset.html#下載originaloptimization-dataset">
+            
+                    
+                    下載Optimization Dataset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.8.5" data-path="../application_dataset.html">
+            
+                <a href="../application_dataset.html#搜尋originaloptimization-dataset">
+            
+                    
+                    搜尋Optimization Dataset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.8.6" data-path="../application_dataset.html">
+            
+                <a href="../application_dataset.html#刪除originaloptimization-dataset">
+            
+                    
+                    刪除Optimization Dataset
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9" data-path="../optimization/pipeline.html">
+            
+                <a href="../optimization/pipeline.html">
+            
+                    
+                    Optimization
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.9.1" >
+            
+                <span>
+            
+                    
+                    Optimization Pipeline
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.9.1.1" data-path="../optimization/pipeline.html">
+            
+                <a href="../optimization/pipeline.html#查看所有optimization-pipeline">
+            
+                    
+                    查看所有Optimization Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.1.2" data-path="../optimization/pipeline.html">
+            
+                <a href="../optimization/pipeline.html#新增optimization-pipeline">
+            
+                    
+                    新增Optimization Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.1.3" data-path="../optimization/pipeline.html">
+            
+                <a href="../optimization/pipeline.html#更新optimization-pipeline">
+            
+                    
+                    更新Optimization Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.1.4" data-path="../optimization/pipeline.html">
+            
+                <a href="../optimization/pipeline.html#下載optimization-pipeline">
+            
+                    
+                    下載Optimization Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.1.5" data-path="../optimization/pipeline.html">
+            
+                <a href="../optimization/pipeline.html#刪除optimization-pipeline">
+            
+                    
+                    刪除Optimization Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.2" data-path="../optimization/config.html">
+            
+                <a href="../optimization/config.html">
+            
+                    
+                    Optimization Config
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.9.2.1" data-path="../optimization/config.html">
+            
+                <a href="../optimization/config.html#查看所有optimization-config">
+            
+                    
+                    查看所有Optimization Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.2.2" data-path="../optimization/config.html">
+            
+                <a href="../optimization/config.html#新增optimization-config">
+            
+                    
+                    新增Optimization Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.2.3" data-path="../optimization/config.html">
+            
+                <a href="../optimization/config.html#更新optimization-config">
+            
+                    
+                    更新Optimization Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.2.4" data-path="../optimization/config.html">
+            
+                <a href="../optimization/config.html#刪除optimization-config">
+            
+                    
+                    刪除Optimization Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.3" data-path="../optimization/image.html">
+            
+                <a href="../optimization/image.html">
+            
+                    
+                    Optimization Image
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.9.3.1" data-path="../optimization/image.html">
+            
+                <a href="../optimization/image.html#查看所有optimization-image">
+            
+                    
+                    查看所有Optimization Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.3.2" data-path="../optimization/image.html">
+            
+                <a href="../optimization/image.html#新增optimization-image">
+            
+                    
+                    新增Optimization Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.3.3" data-path="../optimization/image.html">
+            
+                <a href="../optimization/image.html#更新optimization-image">
+            
+                    
+                    更新Optimization Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.3.4" data-path="../optimization/image.html">
+            
+                <a href="../optimization/image.html#下載optimization-image">
+            
+                    
+                    下載Optimization Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.3.5" data-path="../optimization/image.html">
+            
+                <a href="../optimization/image.html#刪除optimization-image">
+            
+                    
+                    刪除Optimization Image
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.4" data-path="../optimization/task.html">
+            
+                <a href="../optimization/task.html">
+            
+                    
+                    Optimization Task
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.6.9.4.1" data-path="../optimization/task.html">
+            
+                <a href="../optimization/task.html#查看所有optimization-task">
+            
+                    
+                    查看所有Optimization Task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.4.2" data-path="../optimization/task.html">
+            
+                <a href="../optimization/task.html#新增optimization-task">
+            
+                    
+                    新增Optimization Task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.4.3" data-path="../optimization/task.html">
+            
+                <a href="../optimization/task.html#更新optimization-task">
+            
+                    
+                    更新Optimization Task
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.4.4" data-path="../optimization/task.html">
+            
+                <a href="../optimization/task.html#下載optimization-task-log">
+            
+                    
+                    下載Optimization Task Log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.6.9.4.5" data-path="../optimization/task.html">
+            
+                <a href="../optimization/task.html#刪除optimization-task">
+            
+                    
+                    刪除Optimization Task
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" >
+            
+                <span>
+            
+                    
+                    Deployment Platform
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1" data-path="../deployment_platform/interface_intro.html">
+            
+                <a href="../deployment_platform/interface_intro.html">
+            
+                    
+                    前端頁面教學
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.2.1.1" data-path="../deployment_platform/interface_intro.html">
+            
+                <a href="../deployment_platform/interface_intro.html#applications-頁面">
+            
+                    
+                    Applications 頁面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.2" data-path="../deployment_platform/interface_intro.html">
+            
+                <a href="../deployment_platform/interface_intro.html#position-頁面">
+            
+                    
+                    Position 頁面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.3" data-path="../deployment_platform/interface_intro.html">
+            
+                <a href="../deployment_platform/interface_intro.html#models-頁面">
+            
+                    
+                    Models 頁面
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2.1.4" data-path="../deployment_platform/deploy_position.html">
+            
+                <a href="../deployment_platform/deploy_position.html">
+            
+                    
+                    部屬Position流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" >
+            
+                <span>
+            
+                    
+                    Edge Server
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.3.1" data-path="../../xApp_rApp/about_xApp_rApp.html">
+            
+                <a href="../../xApp_rApp/about_xApp_rApp.html">
+            
+                    
+                    關於 xApp/rApp
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其他</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../../issue/">
+            
+                <a href="../../issue/">
+            
+                    
+                    常見問題
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../../introduce/deploy_team.html">
+            
+                <a href="../../introduce/deploy_team.html">
+            
+                    
+                    開發人員
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Preprocessing</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x67E5;&#x770B;&#x6240;&#x6709;preprocessing-pipeline">&#x67E5;&#x770B;&#x6240;&#x6709;Preprocessing Pipeline</h1>
+<h2 id="&#x7528;&#x9014;">&#x7528;&#x9014;</h2>
+<p>&#x67E5;&#x770B;&#x4F60;&#x7684; Application &#x5167;&#x7684;&#x6240;&#x6709; Preprocessing Pipeline &#x8CC7;&#x8A0A;</p>
+<h2 id="&#x64CD;&#x4F5C;&#x6B65;&#x9A5F;">&#x64CD;&#x4F5C;&#x6B65;&#x9A5F;</h2>
+<ol>
+<li><p>&#x9032;&#x5165;Application  Dashboard&#x9801;&#x9762;&#x5F8C;&#xFF0C;&#x9EDE;&#x64CA;Preprocessing Pipeline&#xFF0C;&#x5373;&#x53EF;&#x986F;&#x793A;&#x6240;&#x6709;Preprocessing Pipeline</p>
+<p> <img src="../images/preprocessing/create.png" alt="create"></p>
+</li>
+</ol>
+<h1 id="&#x65B0;&#x589E;preprocessing-pipeline">&#x65B0;&#x589E;Preprocessing Pipeline</h1>
+<h2 id="&#x7528;&#x9014;">&#x7528;&#x9014;</h2>
+<p>&#x70BA;&#x4F60;&#x7684; Preproceesing Pipeline &#x5275;&#x5EFA;&#x8CC7;&#x8A0A;</p>
+<h2 id="&#x64CD;&#x4F5C;&#x6B65;&#x9A5F;">&#x64CD;&#x4F5C;&#x6B65;&#x9A5F;</h2>
+<ol>
+<li><p>&#x9EDE;&#x64CA;Upload Preprocessing Pipeline&#x6309;&#x9215;</p>
+<p> <img src="../images/preprocessing/create1.png" alt="create1"></p>
+</li>
+<li><p>&#x8F38;&#x5165;Preprocessing Pipeline&#x8CC7;&#x8A0A;&#x5F8C;&#xFF0C;&#x9EDE;&#x64CA;Select File&#x6309;&#x9215;&#xFF0C;&#x5373;&#x53EF;&#x4E0A;&#x50B3;&#x4F60;&#x7684;Pipeline&#x6A94;&#x6848;&#xFF0C;&#x4E0A;&#x50B3;&#x5B8C;&#x5F8C;&#x6309;&#x4E0B;Create&#x6309;&#x9215;</p>
+<p> <img src="../images/preprocessing/create2.png" alt="create2"></p>
+</li>
+<li><p>Preprocessing Pipeline&#x5275;&#x5EFA;&#x6210;&#x529F;</p>
+<p> <img src="../images/preprocessing/create3.png" alt="create3"></p>
+</li>
+</ol>
+<h1 id="&#x66F4;&#x65B0;preprocessing-pipeline">&#x66F4;&#x65B0;Preprocessing Pipeline</h1>
+<h2 id="&#x7528;&#x9014;">&#x7528;&#x9014;</h2>
+<p>&#x66F4;&#x65B0;&#x4F60;&#x7684; Preprocessing Dataset &#x8CC7;&#x8A0A;</p>
+<h2 id="&#x64CD;&#x4F5C;&#x6B65;&#x9A5F;">&#x64CD;&#x4F5C;&#x6B65;&#x9A5F;</h2>
+<ol>
+<li><p>&#x9EDE;&#x64CA;&#x53F3;&#x65B9;&#x7684;Edit&#x5716;&#x793A;</p>
+<p> <img src="../images/preprocessing/edit.png" alt="edit"></p>
+</li>
+<li><p>&#x8F38;&#x5165;&#x66F4;&#x65B0;&#x7684;Pipeline&#x8CC7;&#x8A0A;&#xFF0C;&#x6216;&#x662F;&#x6309;&#x4E0B;Select File&#x5373;&#x53EF;&#x91CD;&#x65B0;&#x4E0A;&#x50B3;&#x6A94;&#x6848;&#xFF0C;&#x5B8C;&#x6210;&#x5F8C;&#x6309;&#x4E0B;Update&#x6309;&#x9215;</p>
+<p> <img src="../images/preprocessing/edit1.png" alt="edit1"></p>
+</li>
+<li><p>Pipeline&#x66F4;&#x65B0;&#x6210;&#x529F;</p>
+<p> <img src="../images/preprocessing/edit2.png" alt="edit2"></p>
+</li>
+</ol>
+<h1 id="&#x4E0B;&#x8F09;preprocessing-pipeline">&#x4E0B;&#x8F09;Preprocessing Pipeline</h1>
+<h2 id="&#x7528;&#x9014;">&#x7528;&#x9014;</h2>
+<p>&#x78BA;&#x8A8D;&#x4E0A;&#x50B3;&#x7684; Preprocessing Pipeline &#x6A94;&#x6848;&#x6B63;&#x78BA;&#xFF0C;&#x4EE5;&#x53CA;&#x907F;&#x514D;&#x6A94;&#x6848;&#x6D88;&#x5931;</p>
+<h2 id="&#x64CD;&#x4F5C;&#x6B65;&#x9A5F;">&#x64CD;&#x4F5C;&#x6B65;&#x9A5F;</h2>
+<ol>
+<li><p>&#x9EDE;&#x64CA;&#x53F3;&#x65B9;&#x7684;Download&#x5716;&#x793A;&#xFF0C;&#x5728;&#x4E0B;&#x8F09;&#x7D00;&#x9304;&#x6309;&#x4E0B;&#x4FDD;&#x7559;&#x6A94;&#x6848;&#xFF0C;&#x5373;&#x53EF;&#x4E0B;&#x8F09;&#x6210;&#x529F;</p>
+<p> <img src="../images/preprocessing/edit.png" alt="edit"></p>
+</li>
+</ol>
+<h1 id="&#x522A;&#x9664;preprocessing-pipeline">&#x522A;&#x9664;Preprocessing Pipeline</h1>
+<h2 id="&#x7528;&#x9014;">&#x7528;&#x9014;</h2>
+<p>&#x522A;&#x9664;&#x5DF2;&#x4E0D;&#x9700;&#x8981;&#x7684; Preprocessing Pipeline &#x8CC7;&#x8A0A;</p>
+<h2 id="&#x64CD;&#x4F5C;&#x6B65;&#x9A5F;">&#x64CD;&#x4F5C;&#x6B65;&#x9A5F;</h2>
+<ol>
+<li><p>&#x9EDE;&#x64CA;&#x53F3;&#x65B9;&#x7684;Delete&#x5716;&#x793A;</p>
+<p> <img src="../images/preprocessing/edit.png" alt="edit"></p>
+</li>
+<li><p>&#x6309;&#x4E0B;Delete&#x6309;&#x9215;&#x5373;&#x53EF;&#x522A;&#x9664;&#x6210;&#x529F;</p>
+<p> <img src="../images/preprocessing/delete.png" alt="delete"></p>
+</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../project_dataset.html#刪除originaltraining-dataset" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 刪除Project Dataset">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Preprocessing","level":"3.1.6.6","depth":3,"next":{"title":"Preprocessing Pipeline","level":"3.1.6.6.1","depth":4,"ref":"","articles":[{"title":"查看所有Preprocessing Pipeline","level":"3.1.6.6.1.1","depth":5,"anchor":"#查看所有preprocessing-pipeline","path":"user_manual/preprocessing/pipeline.md","ref":"./user_manual/preprocessing/pipeline.md#查看所有preprocessing-pipeline","articles":[]},{"title":"新增Preprocessing Pipeline","level":"3.1.6.6.1.2","depth":5,"anchor":"#新增preprocessing-pipeline","path":"user_manual/preprocessing/pipeline.md","ref":"./user_manual/preprocessing/pipeline.md#新增preprocessing-pipeline","articles":[]},{"title":"更新Preprocessing Pipeline","level":"3.1.6.6.1.3","depth":5,"anchor":"#更新preprocessing-pipeline","path":"user_manual/preprocessing/pipeline.md","ref":"./user_manual/preprocessing/pipeline.md#更新preprocessing-pipeline","articles":[]},{"title":"下載Preprocessing Pipeline","level":"3.1.6.6.1.4","depth":5,"anchor":"#下載preprocessing-pipeline","path":"user_manual/preprocessing/pipeline.md","ref":"./user_manual/preprocessing/pipeline.md#下載preprocessing-pipeline","articles":[]},{"title":"刪除Preprocessing Pipeline","level":"3.1.6.6.1.5","depth":5,"anchor":"#刪除preprocessing-pipeline","path":"user_manual/preprocessing/pipeline.md","ref":"./user_manual/preprocessing/pipeline.md#刪除preprocessing-pipeline","articles":[]}]},"previous":{"title":"刪除Project Dataset","level":"3.1.6.5.6","depth":4,"anchor":"#刪除originaltraining-dataset","path":"user_manual/project_dataset.md","ref":"./user_manual/project_dataset.md#刪除originaltraining-dataset","articles":[]},"dir":"ltr"},"config":{"plugins":["expandable-chapters","chapter-fold","splitter","hide-element","copy-code-button","codetabs"],"styles":{"website":"styles/website.css"},"pluginsConfig":{"chapter-fold":{},"splitter":{},"search":{},"codetabs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"copy-code-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css","website":"styles/website.css"},"showLevel":false,"collapseNav":false},"expandable-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"mitlab_host":"140.118.122.246","dashboard_port":"40000","entrypoint_port":"50000","entrypoint_version":"v1.1.5"},"title":"MITLab AIML Platform GitBook","gitbook":"*"},"file":{"path":"user_manual/preprocessing/pipeline.md","mtime":"2025-09-09T07:35:48.705Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-09-09T07:37:05.444Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-codetabs/codetabs.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
