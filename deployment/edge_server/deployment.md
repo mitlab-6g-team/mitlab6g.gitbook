@@ -23,7 +23,7 @@
 
 ## 安裝包下載
 ```bash
-git clone https://github.com/mitlab-6g-team/mitlab_edge_server.git
+git clone --recurse-submodules https://github.com/mitlab-6g-team/mitlab_edge_server.git
 ```
 
 ## 填入環境變數

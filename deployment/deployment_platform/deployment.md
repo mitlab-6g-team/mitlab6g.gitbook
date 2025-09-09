@@ -24,7 +24,7 @@
 
 ## 安裝包下載
 ```bash
-git clone https://github.com/mitlab-6g-team/mitlab_deployment_platform.git
+git clone --recurse-submodules https://github.com/mitlab-6g-team/mitlab_deployment_platform.git
 ```
 
 ## 填入環境變數
