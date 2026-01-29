@@ -46,7 +46,7 @@ git clone --recurse-submodules https://github.com/mitlab-6g-team/mitlab_deployme
 ## 連接埠說明
 | 系統名稱 | 是否有固定port |
 | --- | --- |
-| AGENT_OPERATION | 36904 |
+| AGENT_OPERATION | 30012 |
 | METADATA_MGT | - |
 | FILE_MGT | - |
 | CENTRAL_CONNECTOR | - |
